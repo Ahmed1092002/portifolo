@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Hi, I'm a Developer",
+    "subtitle": "Full Stack Developer & Designer",
+    "description": "I create beautiful, functional, and user-centered digital experiences",
+    "viewWork": "View My Work",
+    "getInTouch": "Get In Touch"
+  },
+  "about": {
+    "title": "About Me",
+    "paragraph1": "I'm a passionate developer with a keen eye for design and a love for creating exceptional digital experiences. With expertise in both frontend and backend development, I bring ideas to life through clean code and thoughtful design.",
+    "paragraph2": "My approach combines technical excellence with user-centered design, ensuring that every project not only looks great but also functions flawlessly. I'm constantly learning and staying updated with the latest technologies and best practices.",
+    "frontend": {
+      "title": "Frontend",
+      "description": "Creating beautiful and responsive user interfaces"
+    },
+    "backend": {
+      "title": "Backend",
+      "description": "Building robust and scalable server-side solutions"
+    },
+    "design": {
+      "title": "Design",
+      "description": "Crafting intuitive and engaging user experiences"
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "Here are some of my recent works",
+    "ecommerce": {
+      "title": "E-Commerce Platform",
+      "description": "A full-stack e-commerce solution with payment integration, user authentication, and admin dashboard."
+    },
+    "taskManagement": {
+      "title": "Task Management App",
+      "description": "A collaborative task management application with real-time updates and team collaboration features."
+    },
+    "portfolio": {
+      "title": "Portfolio Website",
+      "description": "A modern, responsive portfolio website showcasing projects and skills with smooth animations."
+    },
+    "weather": {
+      "title": "Weather Dashboard",
+      "description": "A beautiful weather dashboard with location-based forecasts and interactive maps."
+    },
+    "analytics": {
+      "title": "Social Media Analytics",
+      "description": "An analytics platform for tracking social media performance with detailed insights and reports."
+    },
+    "lms": {
+      "title": "Learning Management System",
+      "description": "A comprehensive LMS with course management, student tracking, and interactive content."
+    },
+    "liveDemo": "Live Demo →",
+    "github": "GitHub →"
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies and tools I work with"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "I'd love to hear from you. Send me a message!",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "your.email@example.com",
+    "messagePlaceholder": "Your Message",
+    "sendMessage": "Send Message",
+    "letsConnect": "Let's Connect",
+    "connectDescription": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
+    "emailLabel": "Email",
+    "followMe": "Follow Me",
+    "successMessage": "Thank you for your message! I will get back to you soon."
+  },
+  "footer": {
+    "copyright": "© {year} Portfolio. All rights reserved."
+  }
+}
+
