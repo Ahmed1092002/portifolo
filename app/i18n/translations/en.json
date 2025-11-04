@@ -3,84 +3,139 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
-    "skills": "Skills",
-    "contact": "Contact"
+    "services": "Services",
+    "resume": "Resume",
+    "contact": "Contact",
+    "education": "Education",
+    "experience": "Experience"
   },
   "hero": {
-    "title": "Hi, I'm a Developer",
-    "subtitle": "Full Stack Developer & Designer",
-    "description": "I create beautiful, functional, and user-centered digital experiences",
-    "viewWork": "View My Work",
-    "getInTouch": "Get In Touch"
+    "name": "Ahmed Tamer",
+    "title": "Software Engineer (Flutter & Web)",
+    "description": "Passionate Software Engineer specializing in Flutter and React ecosystems. I love building scalable apps, architecting clean solutions, and creating user-centric experiences. Currently exploring backend development using Spring Boot to become a full-stack engineer.",
+    "contactMe": "Contact Me"
   },
   "about": {
     "title": "About Me",
-    "paragraph1": "I'm a passionate developer with a keen eye for design and a love for creating exceptional digital experiences. With expertise in both frontend and backend development, I bring ideas to life through clean code and thoughtful design.",
-    "paragraph2": "My approach combines technical excellence with user-centered design, ensuring that every project not only looks great but also functions flawlessly. I'm constantly learning and staying updated with the latest technologies and best practices.",
-    "frontend": {
-      "title": "Frontend",
-      "description": "Creating beautiful and responsive user interfaces"
-    },
-    "backend": {
-      "title": "Backend",
-      "description": "Building robust and scalable server-side solutions"
-    },
-    "design": {
-      "title": "Design",
-      "description": "Crafting intuitive and engaging user experiences"
-    }
+    "subtitle": "Get to know me",
+    "paragraph1": "Hey there! I'm Ahmed Tamer — a Software Engineer experienced in Flutter and React ecosystems, with a solid background in building mobile and web applications. I’ve worked on ERP systems, AI chat applications, invoicing systems, and payment solutions at AppLogica.",
+    "paragraph2": "I’m passionate about clean architecture, reusable UI design, and writing maintainable, scalable code. I love tackling complex logic and crafting well-structured solutions that connect frontend, backend, and business needs seamlessly.",
+    "paragraph3": "Currently, I’m expanding my skill set by learning backend development using Spring Boot, exploring RESTful APIs, databases, and microservices to become a more versatile engineer.",
+    "downloadResume": "Download Resume"
+  },
+  "services": {
+    "title": "What I do",
+    "subtitle": "My Services",
+    "items": [
+      {
+        "title": "Mobile App Development",
+        "description": "Building beautiful, performant mobile apps using Flutter. From clean UI to scalable architecture, I focus on delivering smooth and responsive experiences."
+      },
+      {
+        "title": "Web Application Development",
+        "description": "Developing robust web apps with React, Next.js, and Vite — ensuring modular design, optimized performance, and excellent user experience."
+      },
+      {
+        "title": "Design Systems & UI Architecture",
+        "description": "Creating and maintaining scalable design systems and reusable UI components using Storybook, Atomic Design, and TypeScript."
+      },
+      {
+        "title": "API Integration & State Management",
+        "description": "Implementing and managing APIs efficiently using REST, Axios, Redux Toolkit, or Cubit, with a focus on clean data flow and error handling."
+      },
+      {
+        "title": "Backend Development (Learning)",
+        "description": "Learning Spring Boot and microservices to build complete systems with strong backend logic, database management, and clean architecture."
+      }
+    ]
   },
   "projects": {
-    "title": "My Projects",
-    "subtitle": "Here are some of my recent works",
-    "ecommerce": {
-      "title": "E-Commerce Platform",
-      "description": "A full-stack e-commerce solution with payment integration, user authentication, and admin dashboard."
-    },
-    "taskManagement": {
-      "title": "Task Management App",
-      "description": "A collaborative task management application with real-time updates and team collaboration features."
-    },
-    "portfolio": {
-      "title": "Portfolio Website",
-      "description": "A modern, responsive portfolio website showcasing projects and skills with smooth animations."
-    },
-    "weather": {
-      "title": "Weather Dashboard",
-      "description": "A beautiful weather dashboard with location-based forecasts and interactive maps."
-    },
-    "analytics": {
-      "title": "Social Media Analytics",
-      "description": "An analytics platform for tracking social media performance with detailed insights and reports."
-    },
-    "lms": {
-      "title": "Learning Management System",
-      "description": "A comprehensive LMS with course management, student tracking, and interactive content."
-    },
-    "liveDemo": "Live Demo →",
-    "github": "GitHub →"
-  },
-  "skills": {
-    "title": "Skills",
-    "subtitle": "Technologies and tools I work with"
+    "title": "Projects",
+    "subtitle": "Some of my Work",
+    "viewAll": "View All",
+    "skills": [
+      "Flutter",
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "Firebase",
+      "Redux Toolkit",
+      "Clean Architecture",
+      "Spring Boot"
+    ],
+    "items": [
+      {
+        "title": "ERP System (React)",
+        "description": "Built and maintained a modular ERP system with React and TypeScript. Designed a component-based architecture and Storybook-driven design system."
+      },
+      {
+        "title": "E-Invoice SaaS System (React + Vite)",
+        "description": "Enhanced and refactored a SaaS invoicing platform integrated with the Egyptian Tax Authority. Focused on performance and multi-company management."
+      },
+      {
+        "title": "AI Invoice Assistant (Next.js + LiveKit)",
+        "description": "Developed an AI-powered assistant for invoice processing and live communication using LiveKit (WebRTC) and AI models."
+      },
+      {
+        "title": "Flous App (Flutter)",
+        "description": "Built a mobile money transfer app using Paymob API for secure transactions, with Firebase authentication and clean Cubit-based architecture."
+      },
+      {
+        "title": "POS System (Vite)",
+        "description": "Developed a point-of-sale web app with a modular structure, optimized rendering, and reusable UI components."
+      },
+      {
+        "title": "Applogica Website (Next.js)",
+        "description": "Designed and built the company’s website using Next.js and Tailwind, ensuring responsive design and SEO optimization."
+      }
+    ]
   },
   "contact": {
     "title": "Get In Touch",
-    "subtitle": "I'd love to hear from you. Send me a message!",
+    "subtitle": "Let's build something amazing",
     "name": "Name",
+    "namePlaceholder": "full name",
     "email": "Email",
+    "emailPlaceholder": "example@email.com",
+    "service": "Service",
+    "servicePlaceholder": "Select a service",
+    "serviceOptions": [
+      "Mobile App Development",
+      "Web Application Development",
+      "Design Systems & UI Architecture",
+      "API Integration & State Management",
+      "Backend Development"
+    ],
     "message": "Message",
-    "namePlaceholder": "Your Name",
-    "emailPlaceholder": "your.email@example.com",
-    "messagePlaceholder": "Your Message",
-    "sendMessage": "Send Message",
-    "letsConnect": "Let's Connect",
-    "connectDescription": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
-    "emailLabel": "Email",
-    "followMe": "Follow Me",
-    "successMessage": "Thank you for your message! I will get back to you soon."
+    "submit": "Send Message",
+    "successMessage": "Message sent successfully!"
   },
   "footer": {
-    "copyright": "© {year} Portfolio. All rights reserved."
+    "cta": "Let’s create something great together -",
+    "email": "ahmedtamer.dev@gmail.com",
+    "copyright": "© 2025 Ahmed Tamer. All rights reserved."
+  },
+  "education": {
+    "title": "Education",
+    "subtitle": "My Academic Background",
+    "items": [
+      {
+        "degree": "B.Sc. in Computer Science",
+        "institution": "Modern Academy for Computer Science & Management Technology",
+        "year": "Graduated: 2022"
+      }
+    ]
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "Professional Experience",
+    "items": [
+      {
+        "role": "Frontend Developer",
+        "company": "AppLogica",
+        "period": "2023 - Present",
+        "description": "Worked on multiple projects including ERP, E-Invoice SaaS, and AI chat applications. Focused on clean architecture, design systems, and integrations using React, Next.js, and Flutter."
+      }
+    ]
   }
 }

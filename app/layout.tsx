@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio - Full Stack Developer & Designer",
+  title: "Ahmed Tamer — a Software Engineer",
   description:
-    "Portfolio website showcasing projects, skills, and experience as a full stack developer and designer",
+    "a Software Engineer experienced in Flutter and React ecosystems, with a solid background in building mobile and web applications. I’ve worked on ERP systems, AI chat applications, invoicing systems, and payment solutions at AppLogica.",
 };
 
 export default function RootLayout({

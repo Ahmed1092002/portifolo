@@ -3,8 +3,10 @@ import { useLanguage } from "./LanguageContext";
 export function useTranslation() {
   const { translations, language } = useLanguage();
 
-  const t = (key: string, params?: Record<string, string | number>): string => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const t = (key: string, params?: Record<string, string | number>): any => {
     const keys = key.split(".");
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let value: any = translations;
 
     for (const k of keys) {
@@ -15,12 +17,8 @@ export function useTranslation() {
       }
     }
 
-    if (typeof value !== "string") {
-      return key;
-    }
-
-    // Replace parameters in the translation string
-    if (params) {
+    // If it's a string, handle parameter replacement
+    if (typeof value === "string" && params) {
       return value.replace(/\{(\w+)\}/g, (match, paramKey) => {
         return params[paramKey]?.toString() || match;
       });
@@ -31,4 +29,3 @@ export function useTranslation() {
 
   return { t, language };
 }
-

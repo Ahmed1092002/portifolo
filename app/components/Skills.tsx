@@ -1,94 +1,125 @@
 "use client";
 
 import { useTranslation } from "../i18n/useTranslation";
+import { FONTS, SPACING } from "../constants";
+import type { ReactNode } from "react";
+import {
+  BarChart3,
+  LineChart,
+  MessageSquareText,
+  Bot,
+  Brain,
+} from "lucide-react";
 
-interface Skill {
-  name: string;
-  level: number;
-  category: string;
+interface Service {
+  icon: ReactNode;
+  title: string;
+  description: string;
 }
-
-const skills: Skill[] = [
-  { name: "React", level: 90, category: "Frontend" },
-  { name: "Next.js", level: 85, category: "Frontend" },
-  { name: "TypeScript", level: 88, category: "Frontend" },
-  { name: "JavaScript", level: 92, category: "Frontend" },
-  { name: "Tailwind CSS", level: 90, category: "Frontend" },
-  { name: "Node.js", level: 85, category: "Backend" },
-  { name: "Python", level: 80, category: "Backend" },
-  { name: "PostgreSQL", level: 75, category: "Database" },
-  { name: "MongoDB", level: 78, category: "Database" },
-  { name: "Git", level: 88, category: "Tools" },
-  { name: "Docker", level: 70, category: "Tools" },
-  { name: "AWS", level: 65, category: "Cloud" },
-];
-
-const categories = ["Frontend", "Backend", "Database", "Tools", "Cloud"];
 
 export default function Skills() {
   const { t } = useTranslation();
-  const getCategoryColor = (category: string) => {
-    const colors: Record<string, string> = {
-      Frontend: "from-blue-500 to-blue-600",
-      Backend: "from-purple-500 to-purple-600",
-      Database: "from-green-500 to-green-600",
-      Tools: "from-orange-500 to-orange-600",
-      Cloud: "from-pink-500 to-pink-600",
-    };
-    return colors[category] || "from-gray-500 to-gray-600";
-  };
+  const ICONS: ReactNode[] = [
+    <BarChart3 key="bar" className="w-6 h-6" aria-hidden="true" />,
+    <LineChart key="line" className="w-6 h-6" aria-hidden="true" />,
+    <MessageSquareText key="msg" className="w-6 h-6" aria-hidden="true" />,
+    <Bot key="bot" className="w-6 h-6" aria-hidden="true" />,
+    <Brain key="brain" className="w-6 h-6" aria-hidden="true" />,
+  ];
+  const servicesRaw = t("services.items") as unknown;
+  const servicesArray: Array<Partial<Service>> = Array.isArray(servicesRaw)
+    ? (servicesRaw as Array<Partial<Service>>)
+    : [];
+  const services: Service[] = servicesArray.map((item, i) => ({
+    icon: (item as Partial<Service>).icon ?? ICONS[i] ?? (
+      <BarChart3 className="w-6 h-6" aria-hidden="true" />
+    ),
+    title: item.title ?? "",
+    description: item.description ?? "",
+  }));
 
   return (
     <section
-      id="skills"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black"
+      id="services"
+      className={`${SPACING.sectionPadding} ${SPACING.containerPadding}`}
     >
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-          {t("skills.title")}
-        </h2>
-        <p className="text-center text-gray-600 dark:text-gray-400 mb-12 text-lg">
-          {t("skills.subtitle")}
-        </p>
+      <div className="max-w-[1512px] mx-auto">
+        {/* Section Header */}
+        <div className="flex flex-col items-center mb-12">
+          <h2
+            className={`${FONTS.body} font-extrabold text-[45px] text-white tracking-[-1.35px] mb-2`}
+          >
+            {t("services.title")}
+          </h2>
+          <p
+            className={`${FONTS.body} font-semibold text-[14px] bg-linear-to-r from-[#4fc3f7] to-[#f5f5f5] bg-clip-text text-transparent tracking-[-0.42px]`}
+          >
+            {t("services.subtitle")}
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {categories.map((category) => {
-            const categorySkills = skills.filter(
-              (skill) => skill.category === category
-            );
-            return (
-              <div
-                key={category}
-                className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-lg p-6"
-              >
-                <h3 className="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200">
-                  {category}
-                </h3>
-                <div className="space-y-4">
-                  {categorySkills.map((skill, index) => (
-                    <div key={index}>
-                      <div className="flex justify-between mb-2">
-                        <span className="text-gray-700 dark:text-gray-300 font-medium">
-                          {skill.name}
-                        </span>
-                        <span className="text-gray-600 dark:text-gray-400 text-sm">
-                          {skill.level}%
-                        </span>
-                      </div>
-                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                        <div
-                          className={`h-2.5 rounded-full bg-gradient-to-r ${getCategoryColor(
-                            skill.category
-                          )} transition-all duration-1000`}
-                          style={{ width: `${skill.level}%` }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
+        {/* Services Grid - Row 1 */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5 max-w-[937px] mx-auto">
+          {services.slice(0, 3).map((service, index) => (
+            <div
+              key={index}
+              className="border border-[#2b2b2b] rounded-[10px] p-6 hover:border-[#4fc3f7] transition-all duration-300"
+            >
+              <div className="bg-[#f5f8ff] w-11 h-11 rounded-[9px] flex items-center justify-center mb-6 text-2xl text-[#1a1a1a]">
+                {service.icon}
               </div>
-            );
-          })}
+              <h3
+                className={`${FONTS.body} font-semibold text-[15px] text-white mb-4 leading-[1.2]`}
+              >
+                {service.title}
+              </h3>
+              <p
+                className={`${FONTS.body} font-normal text-[14px] text-[#e1e1e1] leading-normal`}
+              >
+                {service.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Services Grid - Row 2 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[936px] mx-auto">
+          {/* AI Chatbots - Featured Card */}
+          <div className="border border-[#2b2b2b] rounded-[10px] p-6 hover:border-[#4fc3f7] transition-all duration-300 md:col-span-1">
+            <div className="flex flex-col h-full">
+              <div className="bg-[#f5f8ff] w-11 h-11 rounded-[9px] flex items-center justify-center mb-6 text-2xl text-[#1a1a1a]">
+                {services[3]?.icon}
+              </div>
+              <h3
+                className={`${FONTS.body} font-semibold text-[19.773px] text-white mb-4 leading-[1.2]`}
+              >
+                {services[3]?.title ?? ""}
+              </h3>
+              <p
+                className={`${FONTS.body} font-normal text-[14px] text-[#e1e1e1] leading-normal mb-6`}
+              >
+                {services[3]?.description ?? ""}
+              </p>
+
+            </div>
+          </div>
+
+          {/* Machine Learning Card */}
+          <div className="border border-[#2b2b2b] rounded-[10px] p-6 hover:border-[#4fc3f7] transition-all duration-300">
+            <div className="bg-[#f5f8ff] w-11 h-11 rounded-[9px] flex items-center justify-center mb-6 text-2xl text-[#1a1a1a]">
+              {services[4]?.icon}
+            </div>
+            <h3
+              className={`${FONTS.body} font-semibold text-[15px] text-white mb-4 leading-[1.2]`}
+            >
+              {services[4]?.title ?? ""}
+            </h3>
+            <p
+              className={`${FONTS.body} font-normal text-[14px] text-[#e1e1e1] leading-normal`}
+            >
+              {services[4]?.description ?? ""}
+            </p>
+          </div>
         </div>
       </div>
     </section>
