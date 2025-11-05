@@ -10,119 +10,102 @@
     "experience": "Experience"
   },
   "hero": {
-    "name": "Ahmed Tamer",
-    "title": "Software Engineer (Flutter & Web)",
-    "description": "Passionate Software Engineer specializing in Flutter and React ecosystems. I love building scalable apps, architecting clean solutions, and creating user-centric experiences. Currently exploring backend development using Spring Boot to become a full-stack engineer.",
+    "name": "Ahmed Tamer Elsayed",
+    "title": "Flutter & Web Developer 💻",
+    "description": "Software Engineer specialized in Flutter and React ecosystems, with experience across mobile, web, and component-based architectures. Passionate about clean architecture, reusable design systems, and modern frontend development.",
     "contactMe": "Contact Me"
   },
   "about": {
     "title": "About Me",
-    "subtitle": "Get to know me",
-    "paragraph1": "Hey there! I'm Ahmed Tamer — a Software Engineer experienced in Flutter and React ecosystems, with a solid background in building mobile and web applications. I’ve worked on ERP systems, AI chat applications, invoicing systems, and payment solutions at AppLogica.",
-    "paragraph2": "I’m passionate about clean architecture, reusable UI design, and writing maintainable, scalable code. I love tackling complex logic and crafting well-structured solutions that connect frontend, backend, and business needs seamlessly.",
-    "paragraph3": "Currently, I’m expanding my skill set by learning backend development using Spring Boot, exploring RESTful APIs, databases, and microservices to become a more versatile engineer.",
+    "subtitle": "Who I Am",
+    "paragraph1": "Hey there! I'm Ahmed Tamer, a Software Engineer with a passion for building high-quality, scalable, and user-friendly applications. My focus lies in Flutter and React development, covering both mobile and web platforms.",
+    "paragraph2": "I’ve worked on multiple in-house and client projects under Applogica, including ERP systems, invoice management, and AI-powered chat applications integrated with LiveKit and Paymob. I value clean architecture, component reusability, and maintainable codebases.",
+    "paragraph3": "Currently, I’m also expanding my skills into backend development using Spring Boot, learning about RESTful APIs, microservices, and database design to become a full-stack developer.",
     "downloadResume": "Download Resume"
   },
   "services": {
-    "title": "What I do",
+    "title": "What I Do",
     "subtitle": "My Services",
     "items": [
       {
         "title": "Mobile App Development",
-        "description": "Building beautiful, performant mobile apps using Flutter. From clean UI to scalable architecture, I focus on delivering smooth and responsive experiences."
+        "description": "Building high-performance Android and iOS apps using Flutter with clean architecture, responsive UI, and smooth animations."
       },
       {
         "title": "Web Application Development",
-        "description": "Developing robust web apps with React, Next.js, and Vite — ensuring modular design, optimized performance, and excellent user experience."
+        "description": "Developing modern, responsive, and modular web apps using React, Vite, and Next.js with reusable components and design systems."
       },
       {
-        "title": "Design Systems & UI Architecture",
-        "description": "Creating and maintaining scalable design systems and reusable UI components using Storybook, Atomic Design, and TypeScript."
+        "title": "API Integration",
+        "description": "Connecting apps to RESTful APIs using Dio and Axios with efficient state management and error handling."
       },
       {
-        "title": "API Integration & State Management",
-        "description": "Implementing and managing APIs efficiently using REST, Axios, Redux Toolkit, or Cubit, with a focus on clean data flow and error handling."
+        "title": "Firebase & Paymob Integration",
+        "description": "Implementing authentication, analytics, and payment features using Firebase and Paymob API."
       },
       {
-        "title": "Backend Development (Learning)",
-        "description": "Learning Spring Boot and microservices to build complete systems with strong backend logic, database management, and clean architecture."
+        "title": "Design Systems & Clean Architecture",
+        "description": "Creating modular architectures and UI component libraries to maintain code scalability and consistency across projects."
       }
     ]
   },
   "projects": {
     "title": "Projects",
-    "subtitle": "Some of my Work",
+    "subtitle": "Some of My Work",
     "viewAll": "View All",
     "skills": [
       "Flutter",
-      "React.js",
+      "React",
       "Next.js",
-      "TypeScript",
+      "Vite",
       "Firebase",
+      "Dio",
       "Redux Toolkit",
-      "Clean Architecture",
-      "Spring Boot"
+      "Cubit",
+      "BLoC",
+      "TypeScript",
+      "LiveKit"
     ],
     "items": [
       {
         "title": "ERP System (React)",
-        "description": "Built and maintained a modular ERP system with React and TypeScript. Designed a component-based architecture and Storybook-driven design system."
+        "description": "Built and maintained a modular ERP system using React and TypeScript. Implemented a design system using Atomic Design and Storybook, published as an NPM package for UI consistency."
       },
       {
         "title": "E-Invoice SaaS System (React + Vite)",
-        "description": "Enhanced and refactored a SaaS invoicing platform integrated with the Egyptian Tax Authority. Focused on performance and multi-company management."
+        "description": "Developed a SaaS invoice management system integrated with the Egyptian Tax Authority. Improved UI/UX, performance, and added multi-company features."
       },
       {
         "title": "AI Invoice Assistant (Next.js + LiveKit)",
-        "description": "Developed an AI-powered assistant for invoice processing and live communication using LiveKit (WebRTC) and AI models."
+        "description": "Developed an AI-powered assistant that processes invoices and interacts with users in real time using WebRTC and LiveKit."
+      },
+      {
+        "title": "POS App (Vite)",
+        "description": "Developed a web-based POS system for seamless product and transaction management, integrating with the backend APIs for real-time operations."
       },
       {
         "title": "Flous App (Flutter)",
-        "description": "Built a mobile money transfer app using Paymob API for secure transactions, with Firebase authentication and clean Cubit-based architecture."
+        "description": "A money transfer app built on Paymob API for transactions, verification, and user onboarding. Used Cubit for state management and Firebase for analytics."
       },
       {
-        "title": "POS System (Vite)",
-        "description": "Developed a point-of-sale web app with a modular structure, optimized rendering, and reusable UI components."
+        "title": "Ticketing App (React)",
+        "description": "Developed a smart ticketing system allowing users to create, manage, and track support tickets. Built with React and REST APIs."
       },
       {
-        "title": "Applogica Website (Next.js)",
-        "description": "Designed and built the company’s website using Next.js and Tailwind, ensuring responsive design and SEO optimization."
-      }
-    ]
-  },
-  "contact": {
-    "title": "Get In Touch",
-    "subtitle": "Let's build something amazing",
-    "name": "Name",
-    "namePlaceholder": "full name",
-    "email": "Email",
-    "emailPlaceholder": "example@email.com",
-    "service": "Service",
-    "servicePlaceholder": "Select a service",
-    "serviceOptions": [
-      "Mobile App Development",
-      "Web Application Development",
-      "Design Systems & UI Architecture",
-      "API Integration & State Management",
-      "Backend Development"
-    ],
-    "message": "Message",
-    "submit": "Send Message",
-    "successMessage": "Message sent successfully!"
-  },
-  "footer": {
-    "cta": "Let’s create something great together -",
-    "email": "ahmedtamer.dev@gmail.com",
-    "copyright": "© 2025 Ahmed Tamer. All rights reserved."
-  },
-  "education": {
-    "title": "Education",
-    "subtitle": "My Academic Background",
-    "items": [
+        "title": "Applogica Company Website (Next.js)",
+        "description": "Developed the company’s official website using Next.js, focusing on SEO, responsive design, and content modularity."
+      },
       {
-        "degree": "B.Sc. in Computer Science",
-        "institution": "Modern Academy for Computer Science & Management Technology",
-        "year": "Graduated: 2022"
+        "title": "Ahjazili Booking Platform (Flutter)",
+        "description": "Developed a booking platform connecting merchants and customers for hotels and wedding halls in Libya using Flutter, Firebase, and Dio."
+      },
+      {
+        "title": "Worker’s App (Flutter)",
+        "description": "A job platform connecting businesses and workers with chat, file sharing, and notifications. Built with Flutter, Firebase, and Hive."
+      },
+      {
+        "title": "Arshdny Platform (Graduation Project)",
+        "description": "A social platform supporting refugees with job search, education, and communication. Built with Flutter, .NET, Python, and Firebase."
       }
     ]
   },
@@ -131,11 +114,57 @@
     "subtitle": "Professional Experience",
     "items": [
       {
-        "role": "Frontend Developer",
-        "company": "AppLogica",
-        "period": "2023 - Present",
-        "description": "Worked on multiple projects including ERP, E-Invoice SaaS, and AI chat applications. Focused on clean architecture, design systems, and integrations using React, Next.js, and Flutter."
+        "role": "Flutter & Web Developer",
+        "company": "Applogica",
+        "period": "2024 - Present | Cairo, Egypt",
+        "description": "Worked on multiple projects including ERP, E-Invoice SaaS, POS, Ticketing, and Flous App. Built reusable design systems and contributed to AI-integrated web applications using LiveKit. Managed code quality via SonarQube and deployed solutions on Azure."
+      },
+      {
+        "role": "Flutter Developer",
+        "company": "Ahjazili (Freelance Project)",
+        "period": "Apr 2024 - Jun 2024 | Cairo, Egypt",
+        "description": "Developed a booking platform connecting merchants and customers for hotels and events in Libya using Flutter, Firebase, and Dio."
       }
     ]
+  },
+  "education": {
+    "title": "Education",
+    "subtitle": "My Academic Background",
+    "items": [
+      {
+        "degree": "B.Sc. in Computer Science (Information Systems Department)",
+        "institution": "Helwan University",
+        "year": "2019 - 2024",
+        "gpa": "GPA: Good (2.78)"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Let’s Build Something Amazing",
+    "name": "Name",
+    "namePlaceholder": "Full Name",
+    "email": "Email",
+    "emailPlaceholder": "example@email.com",
+    "service": "Service",
+    "servicePlaceholder": "Select a Service",
+    "serviceOptions": [
+      "Mobile App Development",
+      "Web App Development",
+      "UI/UX Design",
+      "API Integration",
+      "Firebase & Paymob Integration"
+    ],
+    "message": "Message",
+    "submit": "Send Message",
+    "successMessage": "Message sent successfully!"
+  },
+  "footer": {
+    "cta": "Let’s Work Together -",
+    "email": "atamer802@yahoo.com",
+    "github": "https://github.com/Ahmed1092002",
+    "linkedin": "https://www.linkedin.com/in/ahmedtamer109",
+    "phone": "+201000807490",
+    "copyright": "© 2025 Ahmed Tamer. All rights reserved."
   }
 }
