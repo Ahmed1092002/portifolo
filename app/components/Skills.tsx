@@ -45,36 +45,36 @@ export default function Skills() {
     >
       <div className="max-w-[1512px] mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col items-center mb-12">
+        <div className="flex flex-col items-center mb-8 sm:mb-10 md:mb-12">
           <h2
-            className={`${FONTS.body} font-extrabold text-[45px] text-(--text-primary) tracking-[-1.35px] mb-2`}
+            className={`${FONTS.body} font-extrabold text-3xl sm:text-4xl md:text-[45px] text-(--text-primary) tracking-tight md:tracking-[-1.35px] mb-2`}
           >
             {t("services.title")}
           </h2>
           <p
-            className={`${FONTS.body} font-semibold text-[14px] bg-linear-to-r from-(--accent-gradient-start) to-(--accent-gradient-end) bg-clip-text text-transparent tracking-[-0.42px]`}
+            className={`${FONTS.body} font-semibold text-xs sm:text-sm md:text-[14px] bg-linear-to-r from-(--accent-gradient-start) to-(--accent-gradient-end) bg-clip-text text-transparent tracking-tight md:tracking-[-0.42px]`}
           >
             {t("services.subtitle")}
           </p>
         </div>
 
         {/* Services Grid - Row 1 */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5 max-w-[937px] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 mb-4 sm:mb-5 max-w-full sm:max-w-[600px] md:max-w-[937px] mx-auto px-4 sm:px-0">
           {services.slice(0, 3).map((service, index) => (
             <div
               key={index}
-              className="border border-(--border-color) rounded-[10px] p-6 hover:border-(--accent-primary) transition-all duration-300"
+              className="border border-(--border-color) rounded-lg sm:rounded-[10px] p-4 sm:p-5 md:p-6 hover:border-(--accent-primary) transition-all duration-300"
             >
-              <div className="bg-[#f5f8ff] w-11 h-11 rounded-[9px] flex items-center justify-center mb-6 text-2xl text-[#1a1a1a]">
+              <div className="bg-[#f5f8ff] w-10 h-10 sm:w-11 sm:h-11 rounded-lg sm:rounded-[9px] flex items-center justify-center mb-4 sm:mb-5 md:mb-6 text-xl sm:text-2xl text-[#1a1a1a]">
                 {service.icon}
               </div>
               <h3
-                className={`${FONTS.body} font-semibold text-[15px] text-(--text-primary) mb-4 leading-[1.2]`}
+                className={`${FONTS.body} font-semibold text-sm sm:text-[15px] text-(--text-primary) mb-3 sm:mb-4 leading-[1.2]`}
               >
                 {service.title}
               </h3>
               <p
-                className={`${FONTS.body} font-normal text-[14px] text-(--text-secondary) leading-normal`}
+                className={`${FONTS.body} font-normal text-xs sm:text-sm md:text-[14px] text-(--text-secondary) leading-normal`}
               >
                 {service.description}
               </p>
@@ -83,20 +83,20 @@ export default function Skills() {
         </div>
 
         {/* Services Grid - Row 2 */}
-        <div className="grid grid-cols-1 md:grid-cols-1 gap-5 max-w-[936px] mx-auto">
+        <div className="grid grid-cols-1 gap-4 sm:gap-5 max-w-full sm:max-w-[600px] md:max-w-[936px] mx-auto px-4 sm:px-0">
           {/* AI Chatbots - Featured Card */}
-          <div className="border border-(--border-color) rounded-[10px] p-6 hover:border-(--accent-primary) transition-all duration-300 md:col-span-1">
+          <div className="border border-(--border-color) rounded-lg sm:rounded-[10px] p-4 sm:p-5 md:p-6 hover:border-(--accent-primary) transition-all duration-300">
             <div className="flex flex-col h-full">
-              <div className="bg-[#f5f8ff] w-11 h-11 rounded-[9px] flex items-center justify-center mb-6 text-2xl text-[#1a1a1a]">
+              <div className="bg-[#f5f8ff] w-10 h-10 sm:w-11 sm:h-11 rounded-lg sm:rounded-[9px] flex items-center justify-center mb-4 sm:mb-5 md:mb-6 text-xl sm:text-2xl text-[#1a1a1a]">
                 {services[3]?.icon}
               </div>
               <h3
-                className={`${FONTS.body} font-semibold text-[19.773px] text-(--text-primary) mb-4 leading-[1.2]`}
+                className={`${FONTS.body} font-semibold text-base sm:text-lg md:text-[19.773px] text-(--text-primary) mb-3 sm:mb-4 leading-[1.2]`}
               >
                 {services[3]?.title ?? ""}
               </h3>
               <p
-                className={`${FONTS.body} font-normal text-[14px] text-(--text-secondary) leading-normal mb-6`}
+                className={`${FONTS.body} font-normal text-xs sm:text-sm md:text-[14px] text-(--text-secondary) leading-normal mb-4 sm:mb-5 md:mb-6`}
               >
                 {services[3]?.description ?? ""}
               </p>

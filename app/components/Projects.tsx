@@ -49,28 +49,28 @@ export default function Projects() {
     >
       <div className="max-w-[1512px] mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col items-center mb-12">
+        <div className="flex flex-col items-center mb-8 sm:mb-10 md:mb-12">
           <h2
-            className={`${FONTS.body} font-extrabold text-[45px] text-(--text-primary) tracking-[-1.35px] mb-2`}
+            className={`${FONTS.body} font-extrabold text-3xl sm:text-4xl md:text-[45px] text-(--text-primary) tracking-tight md:tracking-[-1.35px] mb-2`}
           >
             {t("projects.title")}
           </h2>
           <p
-            className={`${FONTS.body} font-semibold text-[14px] bg-linear-to-r from-(--accent-gradient-start) to-(--accent-gradient-end) bg-clip-text text-transparent tracking-[-0.42px]`}
+            className={`${FONTS.body} font-semibold text-xs sm:text-sm md:text-[14px] bg-linear-to-r from-(--accent-gradient-start) to-(--accent-gradient-end) bg-clip-text text-transparent tracking-tight md:tracking-[-0.42px]`}
           >
             {t("projects.subtitle")}
           </p>
         </div>
 
         {/* Skills Tags */}
-        <div className="flex flex-wrap items-center justify-center gap-5 md:gap-[55px] mb-16">
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-5 lg:gap-[55px] mb-10 sm:mb-12 md:mb-16 px-4">
           {skillTags.map((tag, index) => (
             <div
               key={index}
               className={`
-                rounded-[50px] px-6 py-3 ${
+                rounded-[50px] px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 ${
                   FONTS.body
-                } font-normal text-[16px] leading-normal transition-all duration-200
+                } font-normal text-sm sm:text-[15px] md:text-[16px] leading-normal transition-all duration-200
                 ${
                   index === 0
                     ? "bg-(--border-light) text-(--text-primary)"
@@ -84,23 +84,27 @@ export default function Projects() {
         </div>
 
         {/* Projects Grid - Row 1 */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-20 mb-10 max-w-[1144px] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 sm:gap-12 md:gap-16 lg:gap-20 mb-8 sm:mb-10 max-w-full sm:max-w-[650px] md:max-w-[900px] lg:max-w-[1144px] mx-auto px-4 sm:px-0">
           {visibleProjects.map((project, index) => (
             <div key={index} className="group">
               {/* Content */}
-              <div className="flex items-end justify-between">
-                <div>
-                  <h3 className="font-['Inter'] font-bold text-[20px] text-(--text-muted) leading-normal mb-4">
+              <div className="flex items-end justify-between gap-3">
+                <div className="flex-1">
+                  <h3 className="font-['Inter'] font-bold text-base sm:text-lg md:text-[20px] text-(--text-muted) leading-normal mb-3 sm:mb-4">
                     {project.title}
                   </h3>
-                  <p className="font-['Inter'] font-normal text-[14px] text-(--text-dimmed) leading-normal">
+                  <p className="font-['Inter'] font-normal text-xs sm:text-sm md:text-[14px] text-(--text-dimmed) leading-normal">
                     {project.description}
                   </p>
                 </div>
 
                 {/* Arrow Button */}
-                <button className="shrink-0 bg-(--accent-primary) rounded-full p-2 rotate-180 scale-y-[-1] hover:scale-110 transition-transform">
-                  <svg width="23" height="23" viewBox="0 0 23 23" fill="none">
+                <button className="shrink-0 bg-(--accent-primary) rounded-full p-1.5 sm:p-2 rotate-180 scale-y-[-1] hover:scale-110 transition-transform">
+                  <svg
+                    className="w-5 h-5 sm:w-6 sm:h-6"
+                    viewBox="0 0 23 23"
+                    fill="none"
+                  >
                     <path
                       d="M8 5L15 12L8 19"
                       stroke="white"
@@ -116,10 +120,10 @@ export default function Projects() {
         </div>
 
         {/* View All Button */}
-        <div className="flex justify-center">
+        <div className="flex justify-center px-4">
           <button
             onClick={viewMoreProjects}
-            className="border border-(--border-light) rounded-[75px] px-10 py-[13px] font-['Montserrat'] font-medium text-[15px] text-(--text-primary) hover:border-(--accent-primary) hover:bg-(--accent-primary) transition-all duration-200"
+            className="border border-(--border-light) rounded-[75px] px-8 py-2.5 sm:px-9 sm:py-3 md:px-10 md:py-[13px] font-['Montserrat'] font-medium text-sm sm:text-base md:text-[15px] text-(--text-primary) hover:border-(--accent-primary) hover:bg-(--accent-primary) transition-all duration-200"
           >
             {isVisible ? t("projects.viewLess") : t("projects.viewAll")}
           </button>

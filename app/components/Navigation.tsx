@@ -17,7 +17,6 @@ export default function Navigation() {
     { key: "about", href: "#about" },
     { key: "education", href: "#education" },
     { key: "experience", href: "#experience" },
-    { key: "skills", href: "#skills" },
     { key: "projects", href: "#projects" },
   ];
 

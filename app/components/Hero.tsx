@@ -8,21 +8,21 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className={`min-h-screen relative flex items-center justify-center ${SPACING.containerPadding} pt-[105px] pb-16`}
+      className={`min-h-screen relative flex items-center justify-center ${SPACING.containerPadding} pt-20 sm:pt-24 md:pt-[105px] pb-8 sm:pb-12 md:pb-16`}
     >
       {/* Background Pattern */}
       <div
-        className="absolute top-[139px] left-1/2 -translate-x-1/2 w-[1025px] h-[764px] rounded-[500px] opacity-20 "
+        className="absolute top-[80px] sm:top-[100px] md:top-[139px] left-1/2 -translate-x-1/2 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] md:w-[800px] md:h-[600px] lg:w-[1025px] lg:h-[764px] rounded-[500px] opacity-10 md:opacity-20"
         style={{
           background:
             "repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(79, 195, 247, 0.1) 35px, rgba(79, 195, 247, 0.1) 70px)",
         }}
       />
 
-      <div className="max-w-[1512px] mx-auto text-center relative z-10">
+      <div className="max-w-[1512px] mx-auto text-center relative z-10 px-4">
         {/* Profile Image */}
-        <div className="flex justify-center">
-          <div className="relative w-[30%] h-[auto]  overflow-hidden   ">
+        <div className="flex justify-center mb-6 sm:mb-8">
+          <div className="relative w-[140px] h-[140px] sm:w-[180px] sm:h-[180px] md:w-[220px] md:h-[220px] lg:w-[250px] lg:h-[250px] overflow-hidden">
             <img
               src="/Photoroom-20240702_185228_transparent.png"
               alt="Profile Picture"
@@ -32,14 +32,14 @@ export default function Hero() {
         </div>
 
         {/* Name and Title */}
-        <div className="mb-6">
+        <div className="mb-4 sm:mb-6">
           <h1
-            className={`${FONTS.heading} font-bold text-[63px] text-(--text-primary) tracking-[-3.78px] mb-2`}
+            className={`${FONTS.heading} font-bold text-3xl sm:text-4xl md:text-5xl lg:text-[63px] text-(--text-primary) tracking-tight md:tracking-[-3.78px] mb-2`}
           >
             {t("hero.name")}
           </h1>
           <p
-            className={`${FONTS.heading} font-semibold text-[26px] bg-gradient-to-r from-(--accent-gradient-start) to-(--accent-gradient-end) bg-clip-text text-transparent`}
+            className={`${FONTS.heading} font-semibold text-lg sm:text-xl md:text-2xl lg:text-[26px] bg-gradient-to-r from-(--accent-gradient-start) to-(--accent-gradient-end) bg-clip-text text-transparent`}
           >
             {t("hero.title")}
           </p>
@@ -47,7 +47,7 @@ export default function Hero() {
 
         {/* Description */}
         <p
-          className={`${FONTS.heading} font-medium text-[19px] text-(--text-secondary) leading-[30px] max-w-[793px] mx-auto mb-12`}
+          className={`${FONTS.heading} font-medium text-sm sm:text-base md:text-lg lg:text-[19px] text-(--text-secondary) leading-relaxed md:leading-[30px] max-w-[90%] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[793px] mx-auto mb-8 sm:mb-10 md:mb-12`}
         >
           {t("hero.description")}
         </p>
@@ -55,23 +55,23 @@ export default function Hero() {
         {/* Contact Button */}
         <a
           href="#contact"
-          className={`inline-block border border-(--accent-primary) rounded-[75px] px-[50px] py-[18.5px] ${FONTS.nav} font-medium text-[15px] text-(--text-primary) hover:bg-(--accent-primary) hover:shadow-lg transition-all duration-200`}
+          className={`inline-block border border-(--accent-primary) rounded-[75px] px-8 py-3 sm:px-10 sm:py-4 md:px-[50px] md:py-[18.5px] ${FONTS.nav} font-medium text-sm sm:text-base md:text-[15px] text-(--text-primary) hover:bg-(--accent-primary) hover:shadow-lg transition-all duration-200`}
         >
           {t("hero.contactMe")}
         </a>
 
         {/* Scroll Indicator */}
-        <div className="mt-20 flex justify-center">
+        <div className="mt-12 sm:mt-16 md:mt-20 flex justify-center">
           <a
             href="#about"
             className="inline-flex flex-col items-center text-gray-400 hover:text-[#4fc3f7] transition-colors"
             aria-label="Scroll to about section"
           >
-            <div className="w-[40px] h-[60px] border-2 border-current rounded-full flex items-start justify-center p-2 mb-2">
-              <div className="w-2 h-3 bg-current rounded-full animate-bounce"></div>
+            <div className="w-[30px] h-[50px] sm:w-[35px] sm:h-[55px] md:w-[40px] md:h-[60px] border-2 border-current rounded-full flex items-start justify-center p-2 mb-2">
+              <div className="w-1.5 h-2.5 sm:w-2 sm:h-3 bg-current rounded-full animate-bounce"></div>
             </div>
             <svg
-              className="w-6 h-6 animate-bounce"
+              className="w-5 h-5 sm:w-6 sm:h-6 animate-bounce"
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"

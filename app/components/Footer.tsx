@@ -39,11 +39,11 @@ export default function Footer() {
     >
       <div className="max-w-[1512px] mx-auto">
         {/* Top Section - CTA & Email */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-16">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 mb-12 sm:mb-14 md:mb-16">
           {/* CTA Text */}
-          <div>
+          <div className="text-center md:text-left">
             <h2
-              className={`${FONTS.body} font-medium text-[63px] text-(--text-secondary) leading-[1.06] tracking-[4.41px] capitalize`}
+              className={`${FONTS.body} font-medium text-3xl sm:text-4xl md:text-5xl lg:text-[63px] text-(--text-secondary) leading-[1.06] tracking-[2px] sm:tracking-[3px] md:tracking-[4.41px] capitalize`}
             >
               {t("footer.cta")}
             </h2>
@@ -52,9 +52,13 @@ export default function Footer() {
           {/* Email Contact */}
           <a
             href={`mailto:${CONTACT_EMAIL}`}
-            className="border-[1.556px] border-(--border-light) rounded-[15px] px-[27px] py-[19px] flex items-center gap-4 hover:border-(--accent-primary) transition-all duration-200"
+            className="border border-(--border-light) sm:border-[1.556px] rounded-[15px] px-5 py-3 sm:px-6 sm:py-4 md:px-[27px] md:py-[19px] flex items-center gap-3 sm:gap-4 hover:border-(--accent-primary) transition-all duration-200"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <svg
+              className="w-5 h-5 sm:w-6 sm:h-6"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
               <path
                 d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
                 stroke="currentColor"
@@ -71,7 +75,7 @@ export default function Footer() {
               />
             </svg>
             <span
-              className={`${FONTS.body} font-normal text-[24.896px] text-(--text-muted) leading-[1.49]`}
+              className={`${FONTS.body} font-normal text-base sm:text-lg md:text-xl lg:text-[24.896px] text-(--text-muted) leading-[1.49]`}
             >
               {t("footer.email")}
             </span>
@@ -79,26 +83,26 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-(--border-color) mb-8"></div>
+        <div className="border-t border-(--border-color) mb-6 sm:mb-8"></div>
 
         {/* Bottom Section - Copyright & Social */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
           {/* Copyright */}
           <p
-            className={`${FONTS.body} font-normal text-[16px] text-(--text-dimmed) tracking-[0.4px] lowercase`}
+            className={`${FONTS.body} font-normal text-sm sm:text-[15px] md:text-[16px] text-(--text-dimmed) tracking-[0.3px] sm:tracking-[0.4px] lowercase text-center md:text-left`}
           >
             {t("footer.copyright")}
           </p>
 
           {/* Social Icons */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
             {SOCIAL_LINKS.map((social) => (
               <a
                 key={social.name}
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 flex items-center justify-center text-(--text-muted) hover:text-(--accent-primary) transition-colors"
+                className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center text-(--text-muted) hover:text-(--accent-primary) transition-colors"
                 aria-label={social.name}
               >
                 {SOCIAL_ICONS[social.name]}

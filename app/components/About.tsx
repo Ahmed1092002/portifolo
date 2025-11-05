@@ -75,23 +75,23 @@ export default function About() {
     >
       <div className="max-w-[1512px] mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col items-center mb-12">
+        <div className="flex flex-col items-center mb-8 sm:mb-10 md:mb-12">
           <h2
-            className={`${FONTS.body} font-extrabold text-[45px] text-(--text-primary) tracking-[-1.35px] mb-2`}
+            className={`${FONTS.body} font-extrabold text-3xl sm:text-4xl md:text-[45px] text-(--text-primary) tracking-tight md:tracking-[-1.35px] mb-2`}
           >
             {t("about.title")}
           </h2>
           <p
-            className={`${FONTS.body} font-semibold text-[14px] bg-linear-to-r from-(--accent-gradient-start) to-(--accent-gradient-end) bg-clip-text text-transparent tracking-[-0.42px]`}
+            className={`${FONTS.body} font-semibold text-xs sm:text-sm md:text-[14px] bg-linear-to-r from-(--accent-gradient-start) to-(--accent-gradient-end) bg-clip-text text-transparent tracking-tight md:tracking-[-0.42px]`}
           >
             {t("about.subtitle")}
           </p>
         </div>
 
         {/* Bio Text */}
-        <div className="max-w-[840px] mx-auto">
+        <div className="max-w-[90%] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[840px] mx-auto">
           <div
-            className={`${FONTS.body} font-medium text-[17px] text-(--text-secondary) leading-[25px] text-center space-y-6`}
+            className={`${FONTS.body} font-medium text-sm sm:text-base md:text-[17px] text-(--text-secondary) leading-relaxed md:leading-[25px] text-center space-y-4 sm:space-y-5 md:space-y-6`}
           >
             <p>{t("about.paragraph1")}</p>
             <p>{t("about.paragraph2")}</p>
@@ -100,16 +100,16 @@ export default function About() {
         </div>
 
         {/* Download Resume Button */}
-        <div className="flex flex-col items-center mt-16 gap-3">
+        <div className="flex flex-col items-center mt-10 sm:mt-12 md:mt-16 gap-2 sm:gap-3">
           <button
             type="button"
             onClick={handleDownloadResume}
             disabled={downloading}
-            className={`inline-flex items-center gap-2 border border-(--accent-primary) rounded-[55px] px-10 py-[18.5px] ${FONTS.nav} font-medium text-[15px] text-(--text-primary) hover:bg-(--accent-primary) transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed`}
+            className={`inline-flex items-center gap-2 border border-(--accent-primary) rounded-[55px] px-8 py-3 sm:px-9 sm:py-4 md:px-10 md:py-[18.5px] ${FONTS.nav} font-medium text-sm sm:text-base md:text-[15px] text-(--text-primary) hover:bg-(--accent-primary) transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed`}
           >
             {downloading && (
               <svg
-                className="animate-spin h-4 w-4 text-white"
+                className="animate-spin h-3.5 w-3.5 sm:h-4 sm:w-4 text-white"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -136,7 +136,7 @@ export default function About() {
           </button>
           <div
             aria-live="polite"
-            className={`${FONTS.body} text-[12px] text-(--text-dimmed)`}
+            className={`${FONTS.body} text-[11px] sm:text-[12px] text-(--text-dimmed) text-center`}
           >
             {downloadStatus === "starting" &&
               (t("about.preparingFile") || "Preparing your file...")}
