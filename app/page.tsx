@@ -8,10 +8,14 @@ import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import FloatingShapes from "./components/FloatingShapes";
+import ParticleBackground from "./components/ParticleBackground";
+import FloatingObjects from "./components/FloatingObjects";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-(--background) relative overflow-hidden">
+      <ParticleBackground />
+      <FloatingObjects />
       <FloatingShapes />
       <div className="relative z-10">
         <Navigation />

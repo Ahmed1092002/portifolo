@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "./i18n/LanguageContext";
 import { ThemeProvider } from "./context/ThemeContext";
+import ScrollProgress from "./components/ScrollProgress";
+import CustomCursor from "./components/CustomCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -60,7 +62,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider>
-          <LanguageProvider>{children}</LanguageProvider>
+          <LanguageProvider>
+            <ScrollProgress />
+            <CustomCursor />
+            {children}
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>
