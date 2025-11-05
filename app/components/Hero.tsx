@@ -1,6 +1,7 @@
 "use client";
 import { useTranslation } from "../i18n/useTranslation";
 import { FONTS, SPACING } from "../constants";
+import Card3D from "./Card3D";
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -53,12 +54,14 @@ export default function Hero() {
         </p>
 
         {/* Contact Button */}
-        <a
-          href="#contact"
-          className={`inline-block border border-(--accent-primary) rounded-[75px] px-8 py-3 sm:px-10 sm:py-4 md:px-[50px] md:py-[18.5px] ${FONTS.nav} font-medium text-sm sm:text-base md:text-[15px] text-(--text-primary) hover:bg-(--accent-primary) hover:shadow-lg transition-all duration-200`}
-        >
-          {t("hero.contactMe")}
-        </a>
+        <Card3D className="inline-block">
+          <a
+            href="#contact"
+            className={`inline-block border-2 border-(--accent-primary) rounded-[75px] px-8 py-3 sm:px-10 sm:py-4 md:px-[50px] md:py-[18.5px] ${FONTS.nav} font-medium text-sm sm:text-base md:text-[15px] text-(--text-primary) bg-(--background)/50 backdrop-blur-sm hover:bg-(--accent-primary) hover:shadow-[0_0_30px_rgba(79,195,247,0.5)] transition-all duration-200`}
+          >
+            {t("hero.contactMe")}
+          </a>
+        </Card3D>
 
         {/* Scroll Indicator */}
         <div className="mt-12 sm:mt-16 md:mt-20 flex justify-center">

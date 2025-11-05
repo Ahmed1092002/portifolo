@@ -3,6 +3,7 @@
 import { useTranslation } from "../i18n/useTranslation";
 import { FONTS, SPACING } from "../constants";
 import { useEffect, useState } from "react";
+import Card3D from "./Card3D";
 
 interface Project {
   title: string;
@@ -86,11 +87,11 @@ export default function Projects() {
         {/* Projects Grid - Row 1 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 sm:gap-12 md:gap-16 lg:gap-20 mb-8 sm:mb-10 max-w-full sm:max-w-[650px] md:max-w-[900px] lg:max-w-[1144px] mx-auto px-4 sm:px-0">
           {visibleProjects.map((project, index) => (
-            <div key={index} className="group">
+            <Card3D key={index} className="group h-full">
               {/* Content */}
-              <div className="flex items-end justify-between gap-3">
+              <div className="flex items-end justify-between gap-3 h-full p-5 rounded-lg bg-(--background)/50 backdrop-blur-sm border border-(--border-color)/50 hover:border-(--accent-primary) transition-all duration-300">
                 <div className="flex-1">
-                  <h3 className="font-['Inter'] font-bold text-base sm:text-lg md:text-[20px] text-(--text-muted) leading-normal mb-3 sm:mb-4">
+                  <h3 className="font-['Inter'] font-bold text-base sm:text-lg md:text-[20px] text-(--text-muted) leading-normal mb-3 sm:mb-4 group-hover:text-(--accent-primary) transition-colors">
                     {project.title}
                   </h3>
                   <p className="font-['Inter'] font-normal text-xs sm:text-sm md:text-[14px] text-(--text-dimmed) leading-normal">
@@ -99,7 +100,7 @@ export default function Projects() {
                 </div>
 
                 {/* Arrow Button */}
-                <button className="shrink-0 bg-(--accent-primary) rounded-full p-1.5 sm:p-2 rotate-180 scale-y-[-1] hover:scale-110 transition-transform">
+                <button className="shrink-0 bg-gradient-to-br from-[#4fc3f7] to-[#764ba2] rounded-full p-1.5 sm:p-2 rotate-180 scale-y-[-1] hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-[0_0_20px_rgba(79,195,247,0.5)]">
                   <svg
                     className="w-5 h-5 sm:w-6 sm:h-6"
                     viewBox="0 0 23 23"
@@ -115,7 +116,7 @@ export default function Projects() {
                   </svg>
                 </button>
               </div>
-            </div>
+            </Card3D>
           ))}
         </div>
 

@@ -1,6 +1,7 @@
 "use client";
 import { useTranslation } from "../i18n/useTranslation";
 import { FONTS, SPACING } from "../constants";
+import Card3D from "./Card3D";
 
 interface EducationItem {
   degree: string;
@@ -36,20 +37,19 @@ export default function Education() {
         </div>
         <div className="space-y-5 sm:space-y-6 md:space-y-8 max-w-full sm:max-w-xl md:max-w-2xl mx-auto px-4 sm:px-0">
           {education.map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-(--card-bg) border border-(--border-color) rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 flex flex-col gap-1.5 sm:gap-2 shadow hover:border-(--accent-primary) transition-all duration-300"
-            >
-              <div className="text-base sm:text-lg font-bold text-(--accent-primary)">
-                {item.degree}
+            <Card3D key={idx}>
+              <div className="bg-(--card-bg)/80 backdrop-blur-sm border border-(--border-color) rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 flex flex-col gap-1.5 sm:gap-2 shadow-lg hover:border-(--accent-primary) hover:shadow-[0_0_30px_rgba(79,195,247,0.3)] transition-all duration-300">
+                <div className="text-base sm:text-lg font-bold bg-linear-to-r from-[#4fc3f7] to-[#764ba2] bg-clip-text text-transparent">
+                  {item.degree}
+                </div>
+                <div className="text-sm sm:text-base text-(--text-primary)">
+                  {item.institution}
+                </div>
+                <div className="text-xs sm:text-sm text-(--text-muted)">
+                  {item.year}
+                </div>
               </div>
-              <div className="text-sm sm:text-base text-(--text-primary)">
-                {item.institution}
-              </div>
-              <div className="text-xs sm:text-sm text-(--text-muted)">
-                {item.year}
-              </div>
-            </div>
+            </Card3D>
           ))}
         </div>
       </div>

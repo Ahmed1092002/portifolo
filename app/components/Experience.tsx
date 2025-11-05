@@ -1,6 +1,7 @@
 "use client";
 import { useTranslation } from "../i18n/useTranslation";
 import { FONTS, SPACING } from "../constants";
+import Card3D from "./Card3D";
 
 export default function Experience() {
   const { t } = useTranslation();
@@ -10,12 +11,14 @@ export default function Experience() {
     company: string;
     period: string;
     description: string;
+    img?: string;
   }> = Array.isArray(experienceRaw)
     ? (experienceRaw as Array<{
         role: string;
         company: string;
         period: string;
         description: string;
+        img?: string;
       }>)
     : [];
 
@@ -39,23 +42,40 @@ export default function Experience() {
         </div>
         <div className="space-y-5 sm:space-y-6 md:space-y-8 max-w-full sm:max-w-xl md:max-w-2xl mx-auto px-4 sm:px-0">
           {experience.map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-(--card-bg) border border-(--border-color) rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 flex flex-col gap-1.5 sm:gap-2 shadow hover:border-(--accent-primary) transition-all duration-300"
-            >
-              <div className="text-base sm:text-lg font-bold text-(--accent-primary)">
-                {item.role}
+            <Card3D key={idx}>
+              <div className="bg-(--card-bg)/80 backdrop-blur-sm border border-(--border-color) rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 shadow-lg hover:border-(--accent-primary) hover:shadow-[0_0_30px_rgba(79,195,247,0.3)] transition-all duration-300">
+                <div className="flex gap-4 sm:gap-5">
+                  {/* Company Image */}
+                  {item.img && (
+                    <div className="shrink-0">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg overflow-hidden bg-(--background)/50 border border-(--border-color) flex items-center justify-center">
+                        <img
+                          src={item.img}
+                          alt={item.company}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Experience Details */}
+                  <div className="flex flex-col gap-1.5 sm:gap-2 flex-1">
+                    <div className="text-base sm:text-lg font-bold bg-linear-to-r from-[#4fc3f7] to-[#764ba2] bg-clip-text text-transparent">
+                      {item.role}
+                    </div>
+                    <div className="text-sm sm:text-base text-(--text-primary)">
+                      {item.company}
+                    </div>
+                    <div className="text-xs sm:text-sm text-(--text-muted)">
+                      {item.period}
+                    </div>
+                    <div className="text-xs sm:text-sm text-(--text-secondary) mt-1">
+                      {item.description}
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="text-sm sm:text-base text-(--text-primary)">
-                {item.company}
-              </div>
-              <div className="text-xs sm:text-sm text-(--text-muted)">
-                {item.period}
-              </div>
-              <div className="text-xs sm:text-sm text-(--text-secondary)">
-                {item.description}
-              </div>
-            </div>
+            </Card3D>
           ))}
         </div>
       </div>

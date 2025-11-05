@@ -1,6 +1,7 @@
 "use client";
 import { useTranslation } from "../i18n/useTranslation";
 import { FONTS, SPACING, SOCIAL_LINKS, CONTACT_EMAIL } from "../constants";
+import Card3D from "./Card3D";
 
 const SOCIAL_ICONS: Record<string, React.ReactNode> = {
   Twitter: (
@@ -50,36 +51,38 @@ export default function Footer() {
           </div>
 
           {/* Email Contact */}
-          <a
-            href={`mailto:${CONTACT_EMAIL}`}
-            className="border border-(--border-light) sm:border-[1.556px] rounded-[15px] px-5 py-3 sm:px-6 sm:py-4 md:px-[27px] md:py-[19px] flex items-center gap-3 sm:gap-4 hover:border-(--accent-primary) transition-all duration-200"
-          >
-            <svg
-              className="w-5 h-5 sm:w-6 sm:h-6"
-              viewBox="0 0 24 24"
-              fill="none"
+          <Card3D>
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="border border-(--border-light) sm:border-[1.556px] rounded-[15px] px-5 py-3 sm:px-6 sm:py-4 md:px-[27px] md:py-[19px] flex items-center gap-3 sm:gap-4 bg-(--background)/50 backdrop-blur-sm hover:border-(--accent-primary) hover:shadow-[0_0_20px_rgba(79,195,247,0.3)] transition-all duration-200"
             >
-              <path
-                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                stroke="currentColor"
-                className="text-(--accent-primary)"
-                strokeWidth="2"
+              <svg
+                className="w-5 h-5 sm:w-6 sm:h-6"
+                viewBox="0 0 24 24"
                 fill="none"
-              />
-              <path
-                d="M22 6l-10 7L2 6"
-                stroke="currentColor"
-                className="text-(--accent-primary)"
-                strokeWidth="2"
-                fill="none"
-              />
-            </svg>
-            <span
-              className={`${FONTS.body} font-normal text-base sm:text-lg md:text-xl lg:text-[24.896px] text-(--text-muted) leading-[1.49]`}
-            >
-              {t("footer.email")}
-            </span>
-          </a>
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  stroke="currentColor"
+                  className="text-(--accent-primary)"
+                  strokeWidth="2"
+                  fill="none"
+                />
+                <path
+                  d="M22 6l-10 7L2 6"
+                  stroke="currentColor"
+                  className="text-(--accent-primary)"
+                  strokeWidth="2"
+                  fill="none"
+                />
+              </svg>
+              <span
+                className={`${FONTS.body} font-normal text-base sm:text-lg md:text-xl lg:text-[24.896px] text-(--text-muted) leading-[1.49]`}
+              >
+                {t("footer.email")}
+              </span>
+            </a>
+          </Card3D>
         </div>
 
         {/* Divider */}
@@ -97,16 +100,17 @@ export default function Footer() {
           {/* Social Icons */}
           <div className="flex items-center gap-3 sm:gap-4">
             {SOCIAL_LINKS.map((social) => (
-              <a
-                key={social.name}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center text-(--text-muted) hover:text-(--accent-primary) transition-colors"
-                aria-label={social.name}
-              >
-                {SOCIAL_ICONS[social.name]}
-              </a>
+              <Card3D key={social.name}>
+                <a
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center text-(--text-muted) bg-(--background)/50 backdrop-blur-sm rounded-lg border border-(--border-color)/50 hover:text-(--accent-primary) hover:border-(--accent-primary) hover:shadow-[0_0_15px_rgba(79,195,247,0.3)] transition-all duration-200"
+                  aria-label={social.name}
+                >
+                  {SOCIAL_ICONS[social.name]}
+                </a>
+              </Card3D>
             ))}
           </div>
         </div>

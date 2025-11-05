@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useTranslation } from "../i18n/useTranslation";
 import { FONTS, SPACING, RESUME_LINK_PDF } from "../constants";
+import Card3D from "./Card3D";
 
 export default function About() {
   const { t } = useTranslation();
@@ -101,39 +102,41 @@ export default function About() {
 
         {/* Download Resume Button */}
         <div className="flex flex-col items-center mt-10 sm:mt-12 md:mt-16 gap-2 sm:gap-3">
-          <button
-            type="button"
-            onClick={handleDownloadResume}
-            disabled={downloading}
-            className={`inline-flex items-center gap-2 border border-(--accent-primary) rounded-[55px] px-8 py-3 sm:px-9 sm:py-4 md:px-10 md:py-[18.5px] ${FONTS.nav} font-medium text-sm sm:text-base md:text-[15px] text-(--text-primary) hover:bg-(--accent-primary) transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed`}
-          >
-            {downloading && (
-              <svg
-                className="animate-spin h-3.5 w-3.5 sm:h-4 sm:w-4 text-white"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <circle
-                  className="opacity-25"
-                  cx="12"
-                  cy="12"
-                  r="10"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                ></circle>
-                <path
-                  className="opacity-75"
-                  fill="currentColor"
-                  d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-                ></path>
-              </svg>
-            )}
-            {downloading
-              ? t("about.downloading") || "Preparing download..."
-              : t("about.downloadResume")}
-          </button>
+          <Card3D>
+            <button
+              type="button"
+              onClick={handleDownloadResume}
+              disabled={downloading}
+              className={`inline-flex items-center gap-2 border-2 border-(--accent-primary) rounded-[55px] px-8 py-3 sm:px-9 sm:py-4 md:px-10 md:py-[18.5px] ${FONTS.nav} font-medium text-sm sm:text-base md:text-[15px] text-(--text-primary) bg-(--background)/50 backdrop-blur-sm hover:bg-(--accent-primary) hover:shadow-[0_0_30px_rgba(79,195,247,0.5)] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed`}
+            >
+              {downloading && (
+                <svg
+                  className="animate-spin h-3.5 w-3.5 sm:h-4 sm:w-4 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                  ></path>
+                </svg>
+              )}
+              {downloading
+                ? t("about.downloading") || "Preparing download..."
+                : t("about.downloadResume")}
+            </button>
+          </Card3D>
           <div
             aria-live="polite"
             className={`${FONTS.body} text-[11px] sm:text-[12px] text-(--text-dimmed) text-center`}

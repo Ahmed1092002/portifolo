@@ -45,6 +45,14 @@
       {
         "title": "Design Systems & Clean Architecture",
         "description": "Creating modular architectures and UI component libraries to maintain code scalability and consistency across projects."
+      },
+      {
+        "title": "App Optimization & Maintenance",
+        "description": "Improving app performance, fixing bugs, and maintaining scalable codebases for smooth operation and longevity."
+      },
+      {
+        "title": "Backend Development (Learning)",
+        "description": "Learning Spring Boot and microservices to build complete systems with strong backend logic, database management, and clean architecture."
       }
     ]
   },
@@ -54,17 +62,39 @@
     "viewAll": "View All",
     "viewLess": "View Less",
     "skills": [
+      "Dart",
       "Flutter",
-      "React",
+      "React.js",
       "Next.js",
+      "TypeScript",
+      "Zustand",
+      "Tailwind",
+      "MonoRepo (Turborepo)",
+      "Axios",
       "Vite",
-      "Firebase",
-      "Dio",
-      "Redux Toolkit",
+      "Java",
       "Cubit",
       "BLoC",
-      "TypeScript",
-      "LiveKit"
+      "Redux Toolkit",
+      "Dio",
+      "RESTful APIs",
+      "Firebase",
+      "SQL",
+      "Hive",
+      "Shared Preferences",
+      "Postman",
+      "Git & GitHub",
+      "UI/UX Design",
+      "Localization",
+      "Flutter Web",
+      "Clean Architecture",
+      "Performance Optimization",
+      "Problem Solving",
+      "Agile / Jira",
+      "Teamwork",
+      "Communication Skills",
+      "Spring Boot (Learning)",
+      "Microservices (Learning)"
     ],
     "items": [
       {
@@ -116,6 +146,8 @@
       {
         "role": "Flutter & Web Developer",
         "company": "Applogica",
+        "img": "Applogicalogo.3830cb287b03d61b634d (2).png",
+
         "period": "2024 - Present | Cairo, Egypt",
         "description": "Worked on multiple projects including ERP, E-Invoice SaaS, POS, Ticketing, and Flous App. Built reusable design systems and contributed to AI-integrated web applications using LiveKit. Managed code quality via SonarQube and deployed solutions on Azure."
       },

@@ -45,6 +45,14 @@
       {
         "title": "أنظمة التصميم والمعمارية النظيفة",
         "description": "بناء هياكل برمجية منظمة ومكتبات واجهات مستخدم للحفاظ على قابلية التوسع والاتساق بين المشاريع."
+      },
+      {
+        "title": "تحسين التطبيقات والصيانة",
+        "description": "تحسين أداء التطبيقات، وإصلاح الأخطاء، وصيانة قواعد الأكواد القابلة للتوسع لضمان التشغيل السلس وطول العمر."
+      },
+      {
+        "title": "تطوير الباك إند (تعلم)",
+        "description": "تعلم Spring Boot وmicroservices لبناء أنظمة كاملة مع منطق باك إند قوي، وإدارة قواعد البيانات، وهندسة نظيفة."
       }
     ]
   },
@@ -53,18 +61,39 @@
     "subtitle": "بعض من أعمالي",
     "viewAll": "عرض الكل",
     "skills": [
+      "Dart",
       "Flutter",
-      "React",
+      "React.js",
       "Next.js",
+      "TypeScript",
+      "Zustand",
+      "Tailwind",
+      "MonoRepo (Turborepo)",
+      "Axios",
       "Vite",
-      "Firebase",
-      "Dio",
-      "Redux Toolkit",
+      "Java",
       "Cubit",
       "BLoC",
-      "TypeScript",
-      "Paymob API",
-      "LiveKit"
+      "Redux Toolkit",
+      "Dio",
+      "RESTful APIs",
+      "Firebase",
+      "SQL",
+      "Hive",
+      "Shared Preferences",
+      "Postman",
+      "Git & GitHub",
+      "UI/UX Design",
+      "Localization",
+      "Flutter Web",
+      "Clean Architecture",
+      "Performance Optimization",
+      "Problem Solving",
+      "Agile / Jira",
+      "Teamwork",
+      "Communication Skills",
+      "Spring Boot (Learning)",
+      "Microservices (Learning)"
     ],
     "items": [
       {
@@ -115,6 +144,7 @@
     "items": [
       {
         "role": "مطور Flutter وويب",
+        "img": "Applogicalogo.3830cb287b03d61b634d (2).png",
         "company": "Applogica",
         "period": "2024 - الآن | القاهرة، مصر",
         "description": "عملت على عدة مشاريع تشمل ERP، نظام الفواتير، POS، تذاكر الدعم، وتطبيق فلوس. ساهمت في بناء أنظمة تصميم قابلة لإعادة الاستخدام، وتطوير تطبيقات متكاملة مع الذكاء الاصطناعي باستخدام LiveKit. كما ساهمت في مراقبة جودة الأكواد باستخدام SonarQube ونشر الحلول على Azure."
