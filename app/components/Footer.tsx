@@ -35,7 +35,7 @@ export default function Footer() {
 
   return (
     <footer
-      className={`bg-[#1a1a1a] ${SPACING.sectionPadding} ${SPACING.containerPadding}`}
+      className={`bg-(--background) ${SPACING.sectionPadding} ${SPACING.containerPadding}`}
     >
       <div className="max-w-[1512px] mx-auto">
         {/* Top Section - CTA & Email */}
@@ -43,7 +43,7 @@ export default function Footer() {
           {/* CTA Text */}
           <div>
             <h2
-              className={`${FONTS.body} font-medium text-[63px] text-[#dedede] leading-[1.06] tracking-[4.41px] capitalize`}
+              className={`${FONTS.body} font-medium text-[63px] text-(--text-secondary) leading-[1.06] tracking-[4.41px] capitalize`}
             >
               {t("footer.cta")}
             </h2>
@@ -52,24 +52,26 @@ export default function Footer() {
           {/* Email Contact */}
           <a
             href={`mailto:${CONTACT_EMAIL}`}
-            className="border-[1.556px] border-[#484e53] rounded-[15px] px-[27px] py-[19px] flex items-center gap-4 hover:border-[#4fc3f7] transition-all duration-200"
+            className="border-[1.556px] border-(--border-light) rounded-[15px] px-[27px] py-[19px] flex items-center gap-4 hover:border-(--accent-primary) transition-all duration-200"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path
                 d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                stroke="#4fc3f7"
+                stroke="currentColor"
+                className="text-(--accent-primary)"
                 strokeWidth="2"
                 fill="none"
               />
               <path
                 d="M22 6l-10 7L2 6"
-                stroke="#4fc3f7"
+                stroke="currentColor"
+                className="text-(--accent-primary)"
                 strokeWidth="2"
                 fill="none"
               />
             </svg>
             <span
-              className={`${FONTS.body} font-normal text-[24.896px] text-[#c9c9c9] leading-[1.49]`}
+              className={`${FONTS.body} font-normal text-[24.896px] text-(--text-muted) leading-[1.49]`}
             >
               {t("footer.email")}
             </span>
@@ -77,13 +79,13 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-[#2b2b2b] mb-8"></div>
+        <div className="border-t border-(--border-color) mb-8"></div>
 
         {/* Bottom Section - Copyright & Social */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Copyright */}
           <p
-            className={`${FONTS.body} font-normal text-[16px] text-[darkgrey] tracking-[0.4px] lowercase`}
+            className={`${FONTS.body} font-normal text-[16px] text-(--text-dimmed) tracking-[0.4px] lowercase`}
           >
             {t("footer.copyright")}
           </p>
@@ -96,7 +98,7 @@ export default function Footer() {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 flex items-center justify-center text-[#c9c9c9] hover:text-[#4fc3f7] transition-colors"
+                className="w-8 h-8 flex items-center justify-center text-(--text-muted) hover:text-(--accent-primary) transition-colors"
                 aria-label={social.name}
               >
                 {SOCIAL_ICONS[social.name]}
@@ -106,7 +108,7 @@ export default function Footer() {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 flex items-center justify-center text-[#c9c9c9] hover:text-[#4fc3f7] transition-colors"
+              className="w-8 h-8 flex items-center justify-center text-(--text-muted) hover:text-(--accent-primary) transition-colors"
             >
               <svg
                 width="24"
@@ -121,7 +123,7 @@ export default function Footer() {
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 flex items-center justify-center text-[#c9c9c9] hover:text-[#4fc3f7] transition-colors"
+              className="w-8 h-8 flex items-center justify-center text-(--text-muted) hover:text-(--accent-primary) transition-colors"
             >
               <svg
                 width="24"
@@ -136,7 +138,7 @@ export default function Footer() {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 flex items-center justify-center text-[#c9c9c9] hover:text-[#4fc3f7] transition-colors"
+              className="w-8 h-8 flex items-center justify-center text-(--text-muted) hover:text-(--accent-primary) transition-colors"
             >
               <svg
                 width="24"
@@ -151,7 +153,7 @@ export default function Footer() {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 flex items-center justify-center text-[#c9c9c9] hover:text-[#4fc3f7] transition-colors"
+              className="w-8 h-8 flex items-center justify-center text-(--text-muted) hover:text-(--accent-primary) transition-colors"
             >
               <svg
                 width="24"

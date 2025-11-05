@@ -21,23 +21,25 @@ export default function Hero() {
 
       <div className="max-w-[1512px] mx-auto text-center relative z-10">
         {/* Profile Image */}
-        <div className="mb-8 flex justify-center">
-          <div className="relative w-[202px] h-[197px] rounded-full overflow-hidden border-4 border-[#4fc3f7]">
-            <div className="w-full h-full bg-gradient-to-br from-[#4fc3f7] to-[#2196f3] flex items-center justify-center text-white text-6xl font-bold">
-              G
-            </div>
+        <div className="flex justify-center">
+          <div className="relative w-[30%] h-[auto]  overflow-hidden   ">
+            <img
+              src="/Photoroom-20240702_185228_transparent.png"
+              alt="Profile Picture"
+              className="w-full h-full object-contain"
+            />
           </div>
         </div>
 
         {/* Name and Title */}
         <div className="mb-6">
           <h1
-            className={`${FONTS.heading} font-bold text-[63px] text-white tracking-[-3.78px] mb-2`}
+            className={`${FONTS.heading} font-bold text-[63px] text-(--text-primary) tracking-[-3.78px] mb-2`}
           >
             {t("hero.name")}
           </h1>
           <p
-            className={`${FONTS.heading} font-semibold text-[26px] bg-gradient-to-r from-[#4fc3f7] to-[#f5f5f5] bg-clip-text text-transparent`}
+            className={`${FONTS.heading} font-semibold text-[26px] bg-gradient-to-r from-(--accent-gradient-start) to-(--accent-gradient-end) bg-clip-text text-transparent`}
           >
             {t("hero.title")}
           </p>
@@ -45,7 +47,7 @@ export default function Hero() {
 
         {/* Description */}
         <p
-          className={`${FONTS.heading} font-medium text-[19px] text-[#e1e1e1] leading-[30px] max-w-[793px] mx-auto mb-12`}
+          className={`${FONTS.heading} font-medium text-[19px] text-(--text-secondary) leading-[30px] max-w-[793px] mx-auto mb-12`}
         >
           {t("hero.description")}
         </p>
@@ -53,7 +55,7 @@ export default function Hero() {
         {/* Contact Button */}
         <a
           href="#contact"
-          className={`inline-block border border-[#4fc3f7] rounded-[75px] px-[50px] py-[18.5px] ${FONTS.nav} font-medium text-[15px] text-white hover:bg-[#4fc3f7] hover:shadow-lg transition-all duration-200`}
+          className={`inline-block border border-(--accent-primary) rounded-[75px] px-[50px] py-[18.5px] ${FONTS.nav} font-medium text-[15px] text-(--text-primary) hover:bg-(--accent-primary) hover:shadow-lg transition-all duration-200`}
         >
           {t("hero.contactMe")}
         </a>

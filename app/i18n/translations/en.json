@@ -2,16 +2,15 @@
   "nav": {
     "home": "Home",
     "about": "About",
-    "projects": "Projects",
-    "services": "Services",
-    "resume": "Resume",
-    "contact": "Contact",
     "education": "Education",
-    "experience": "Experience"
+    "experience": "Experience",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
   },
   "hero": {
     "name": "Ahmed Tamer Elsayed",
-    "title": "Flutter & Web Developer 💻",
+    "title": "Flutter & Web Developer",
     "description": "Software Engineer specialized in Flutter and React ecosystems, with experience across mobile, web, and component-based architectures. Passionate about clean architecture, reusable design systems, and modern frontend development.",
     "contactMe": "Contact Me"
   },
@@ -53,6 +52,7 @@
     "title": "Projects",
     "subtitle": "Some of My Work",
     "viewAll": "View All",
+    "viewLess": "View Less",
     "skills": [
       "Flutter",
       "React",

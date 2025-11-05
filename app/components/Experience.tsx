@@ -27,12 +27,12 @@ export default function Experience() {
       <div className="max-w-[1512px] mx-auto">
         <div className="flex flex-col items-center mb-12">
           <h2
-            className={`${FONTS.body} font-extrabold text-[45px] text-white tracking-[-1.35px] mb-2`}
+            className={`${FONTS.body} font-extrabold text-[45px] text-(--text-primary) tracking-[-1.35px] mb-2`}
           >
             {t("experience.title")}
           </h2>
           <p
-            className={`${FONTS.body} font-semibold text-[14px] bg-linear-to-r from-[#4fc3f7] to-[#f5f5f5] bg-clip-text text-transparent tracking-[-0.42px]`}
+            className={`${FONTS.body} font-semibold text-[14px] bg-linear-to-r from-(--accent-gradient-start) to-(--accent-gradient-end) bg-clip-text text-transparent tracking-[-0.42px]`}
           >
             {t("experience.subtitle")}
           </p>
@@ -41,14 +41,18 @@ export default function Experience() {
           {experience.map((item, idx) => (
             <div
               key={idx}
-              className="bg-[#23272f] rounded-xl p-6 flex flex-col gap-2 shadow"
+              className="bg-(--card-bg) border border-(--border-color) rounded-xl p-6 flex flex-col gap-2 shadow hover:border-(--accent-primary) transition-all duration-300"
             >
-              <div className="text-lg font-bold text-[#4fc3f7]">
+              <div className="text-lg font-bold text-(--accent-primary)">
                 {item.role}
               </div>
-              <div className="text-base text-white">{item.company}</div>
-              <div className="text-sm text-[#c1c1c1]">{item.period}</div>
-              <div className="text-sm text-[#e1e1e1]">{item.description}</div>
+              <div className="text-base text-(--text-primary)">
+                {item.company}
+              </div>
+              <div className="text-sm text-(--text-muted)">{item.period}</div>
+              <div className="text-sm text-(--text-secondary)">
+                {item.description}
+              </div>
             </div>
           ))}
         </div>

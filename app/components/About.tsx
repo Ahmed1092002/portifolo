@@ -14,12 +14,12 @@ export default function About() {
         {/* Section Header */}
         <div className="flex flex-col items-center mb-12">
           <h2
-            className={`${FONTS.body} font-extrabold text-[45px] text-white tracking-[-1.35px] mb-2`}
+            className={`${FONTS.body} font-extrabold text-[45px] text-(--text-primary) tracking-[-1.35px] mb-2`}
           >
             {t("about.title")}
           </h2>
           <p
-            className={`${FONTS.body} font-semibold text-[14px] bg-linear-to-r from-[#4fc3f7] to-[#f5f5f5] bg-clip-text text-transparent tracking-[-0.42px]`}
+            className={`${FONTS.body} font-semibold text-[14px] bg-linear-to-r from-(--accent-gradient-start) to-(--accent-gradient-end) bg-clip-text text-transparent tracking-[-0.42px]`}
           >
             {t("about.subtitle")}
           </p>
@@ -28,7 +28,7 @@ export default function About() {
         {/* Bio Text */}
         <div className="max-w-[840px] mx-auto">
           <div
-            className={`${FONTS.body} font-medium text-[17px] text-[#e1e1e1] leading-[25px] text-center space-y-6`}
+            className={`${FONTS.body} font-medium text-[17px] text-(--text-secondary) leading-[25px] text-center space-y-6`}
           >
             <p>{t("about.paragraph1")}</p>
             <p>{t("about.paragraph2")}</p>
@@ -40,7 +40,7 @@ export default function About() {
         <div className="flex justify-center mt-16">
           <a
             href="#"
-            className={`inline-block border border-[#4fc3f7] rounded-[55px] px-[40px] py-[18.5px] ${FONTS.nav} font-medium text-[15px] text-white hover:bg-[#4fc3f7] transition-all duration-200`}
+            className={`inline-block border border-(--accent-primary) rounded-[55px] px-[40px] py-[18.5px] ${FONTS.nav} font-medium text-[15px] text-(--text-primary) hover:bg-(--accent-primary) transition-all duration-200`}
           >
             {t("about.downloadResume")}
           </a>

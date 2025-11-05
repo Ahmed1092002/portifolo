@@ -46,12 +46,12 @@ export default function Contact() {
         {/* Section Header */}
         <div className="flex flex-col items-center mb-12">
           <h2
-            className={`${FONTS.body} font-extrabold text-[45px] text-white tracking-[-1.35px] mb-2`}
+            className={`${FONTS.body} font-extrabold text-[45px] text-(--text-primary) tracking-[-1.35px] mb-2`}
           >
             {t("contact.title")}
           </h2>
           <p
-            className={`${FONTS.body} font-semibold text-[14px] bg-linear-to-r from-[#4fc3f7] to-[#f5f5f5] bg-clip-text text-transparent tracking-[-0.42px]`}
+            className={`${FONTS.body} font-semibold text-[14px] bg-linear-to-r from-(--accent-gradient-start) to-(--accent-gradient-end) bg-clip-text text-transparent tracking-[-0.42px]`}
           >
             {t("contact.subtitle")}
           </p>
@@ -64,7 +64,7 @@ export default function Contact() {
             <div>
               <label
                 htmlFor="name"
-                className={`block ${FONTS.body} font-bold text-[18px] text-white leading-[1.2] mb-4`}
+                className={`block ${FONTS.body} font-bold text-[18px] text-(--text-primary) leading-[1.2] mb-4`}
               >
                 {t("contact.name")}
               </label>
@@ -76,7 +76,7 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder={t("contact.namePlaceholder")}
                 required
-                className={`w-full h-[70px] rounded-[10px] border border-[#d6dded] bg-transparent px-8 ${FONTS.body} font-normal text-[20px] text-white placeholder:text-[#8987a1] focus:outline-none focus:border-[#4fc3f7]`}
+                className={`w-full h-[70px] rounded-[10px] border border-(--border-light) bg-transparent px-8 ${FONTS.body} font-normal text-[20px] text-(--text-primary) placeholder:text-(--text-dimmed) focus:outline-none focus:border-(--accent-primary)`}
               />
             </div>
 
@@ -84,7 +84,7 @@ export default function Contact() {
             <div>
               <label
                 htmlFor="email"
-                className={`block ${FONTS.body} font-bold text-[18px] text-white leading-[1.2] mb-4`}
+                className={`block ${FONTS.body} font-bold text-[18px] text-(--text-primary) leading-[1.2] mb-4`}
               >
                 {t("contact.email")}
               </label>
@@ -96,7 +96,7 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder={t("contact.emailPlaceholder")}
                 required
-                className={`w-full h-[70px] rounded-[10px] border border-[#d6dded] bg-transparent px-8 ${FONTS.body} font-normal text-[20px] text-white placeholder:text-[#8987a1] focus:outline-none focus:border-[#4fc3f7]`}
+                className={`w-full h-[70px] rounded-[10px] border border-(--border-light) bg-transparent px-8 ${FONTS.body} font-normal text-[20px] text-(--text-primary) placeholder:text-(--text-dimmed) focus:outline-none focus:border-(--accent-primary)`}
               />
             </div>
 
@@ -104,7 +104,7 @@ export default function Contact() {
             <div>
               <label
                 htmlFor="service"
-                className={`block ${FONTS.body} font-bold text-[18px] text-white leading-[1.2] mb-4`}
+                className={`block ${FONTS.body} font-bold text-[18px] text-(--text-primary) leading-[1.2] mb-4`}
               >
                 {t("contact.service")}
               </label>
@@ -115,10 +115,17 @@ export default function Contact() {
                   value={formData.service}
                   onChange={handleChange}
                   required
-                  className={`w-full h-[70px] rounded-[10px] border border-[#d6dded] bg-transparent px-8 ${FONTS.body} font-normal text-[20px] text-[#8987a1] focus:outline-none focus:border-[#4fc3f7] appearance-none cursor-pointer`}
-                  style={{ color: formData.service ? "white" : "#8987a1" }}
+                  className={`w-full h-[70px] rounded-[10px] border border-(--border-light) bg-(--background) px-8 ${FONTS.body} font-normal text-[20px] text-(--text-dimmed) focus:outline-none focus:border-(--accent-primary) appearance-none cursor-pointer`}
+                  style={{
+                    color: formData.service
+                      ? "var(--text-primary)"
+                      : "var(--text-dimmed)",
+                  }}
                 >
-                  <option value="" className="bg-[#1a1a1a] text-[#8987a1]">
+                  <option
+                    value=""
+                    className="bg-(--background) text-(--text-dimmed)"
+                  >
                     {t("contact.selectService")}
                   </option>
                   {serviceOptions.map((option, index) => (
@@ -143,7 +150,7 @@ export default function Contact() {
             <div>
               <label
                 htmlFor="message"
-                className={`block ${FONTS.body} font-bold text-[18px] text-white leading-[1.2] mb-4`}
+                className={`block ${FONTS.body} font-bold text-[18px] text-(--text-primary) leading-[1.2] mb-4`}
               >
                 {t("contact.message")}
               </label>
@@ -154,14 +161,14 @@ export default function Contact() {
                 onChange={handleChange}
                 rows={8}
                 required
-                className="w-full rounded-[10px] border border-[#d6dded] bg-transparent px-8 py-6 font-['Inter'] font-normal text-[20px] text-white placeholder:text-[#8987a1] focus:outline-none focus:border-[#4fc3f7] resize-none"
+                className="w-full rounded-[10px] border border-(--border-light) bg-transparent px-8 py-6 font-['Inter'] font-normal text-[20px] text-(--text-primary) placeholder:text-(--text-dimmed) focus:outline-none focus:border-(--accent-primary) resize-none"
               />
             </div>
 
             {/* Submit Button */}
             <button
               type="submit"
-              className={`w-full h-[62px] bg-white rounded-[10px] ${FONTS.button} font-bold text-[16px] text-black leading-normal hover:bg-[#4fc3f7] hover:text-white transition-all duration-200`}
+              className={`w-full h-[62px] bg-(--accent-primary) rounded-[10px] ${FONTS.button} font-bold text-[16px] text-white leading-normal hover:opacity-90 transition-all duration-200`}
             >
               {t("contact.submit")}
             </button>

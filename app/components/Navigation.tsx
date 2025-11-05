@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTranslation } from "../i18n/useTranslation";
 import LanguageSwitcher from "./LanguageSwitcher";
+import ThemeToggle from "./ThemeToggle";
 import { FONTS } from "../constants";
-import { useRef } from "react";
 
 export default function Navigation() {
   const { t } = useTranslation();
@@ -17,9 +17,8 @@ export default function Navigation() {
     { key: "about", href: "#about" },
     { key: "education", href: "#education" },
     { key: "experience", href: "#experience" },
+    { key: "skills", href: "#skills" },
     { key: "projects", href: "#projects" },
-    { key: "services", href: "#skills" },
-    { key: "resume", href: "#resume" },
   ];
 
   useEffect(() => {
@@ -58,7 +57,7 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#1a1a1a]/95 backdrop-blur-md shadow-lg"
+          ? "bg-(--background)/95 backdrop-blur-md shadow-lg"
           : "bg-transparent"
       }`}
     >
@@ -67,10 +66,33 @@ export default function Navigation() {
           {/* Logo */}
           <Link
             href="#home"
-            className={`${FONTS.logo} text-[32px] text-white hover:text-[#4fc3f7] transition-colors duration-200`}
+            className={`${FONTS.logo} text-[32px] text-(--text-primary) hover:text-(--accent-primary) transition-colors duration-200`}
           >
             {t("hero.name")}
           </Link>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden flex flex-col gap-1.5 p-2"
+            aria-label="Toggle mobile menu"
+          >
+            <span
+              className={`block w-6 h-0.5 bg-(--text-primary) transition-all ${
+                isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
+              }`}
+            />
+            <span
+              className={`block w-6 h-0.5 bg-(--text-primary) transition-all ${
+                isMobileMenuOpen ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`block w-6 h-0.5 bg-(--text-primary) transition-all ${
+                isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            />
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-[40px]">
@@ -83,8 +105,8 @@ export default function Navigation() {
                   FONTS.nav
                 } text-[18px] transition-colors duration-200 ${
                   activeSection === link.href.replace("#", "")
-                    ? "font-semibold text-[#4fc3f7]"
-                    : "font-medium text-[#c1c1c1] hover:text-[#4fc3f7]"
+                    ? "font-semibold text-(--accent-primary)"
+                    : "font-medium text-(--text-muted) hover:text-(--accent-primary)"
                 }`}
               >
                 {t(`nav.${link.key}`) ||
@@ -98,36 +120,23 @@ export default function Navigation() {
             <LanguageSwitcher />
             <a
               href="#contact"
-              className={`border border-[#4fc3f7] rounded-[9px] px-[26.5px] py-[11.5px] ${FONTS.nav} font-medium text-[15px] text-white hover:bg-[#4fc3f7] hover:text-white transition-all duration-200`}
+              className={`border border-(--accent-primary) rounded-[9px] px-[26.5px] py-[11.5px] ${FONTS.nav} font-medium text-[15px] text-(--text-primary) hover:bg-(--accent-primary) hover:text-(--background) transition-all duration-200`}
             >
               {t("nav.contact")}
             </a>
-            {/* Theme Switcher Icon */}
-            <button
-              className="w-[30px] h-[30px] flex items-center justify-center text-[#c1c1c1] hover:text-[#4fc3f7] transition-colors"
-              aria-label="Toggle theme"
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
-              </svg>
-            </button>
+            <ThemeToggle />
           </div>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 space-y-4 border-t border-[#2b2b2b]">
+          <div className="lg:hidden py-4 space-y-4 border-t border-(--border-color) bg-(--background)/95 backdrop-blur-md">
             {navLinks.map((link) => (
               <Link
                 key={link.key}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block ${FONTS.nav} font-medium text-[16px] text-[#c1c1c1] hover:text-[#4fc3f7] transition-colors duration-200`}
+                className={`block ${FONTS.nav} font-medium text-[16px] text-(--text-muted) hover:text-(--accent-primary) transition-colors duration-200`}
               >
                 {t(`nav.${link.key}`)}
               </Link>
@@ -135,10 +144,13 @@ export default function Navigation() {
             <a
               href="#contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`block border border-[#4fc3f7] rounded-[9px] px-[26.5px] py-[11.5px] ${FONTS.nav} font-medium text-[15px] text-white text-center hover:bg-[#4fc3f7] transition-all duration-200`}
+              className={`block border border-(--accent-primary) rounded-[9px] px-[26.5px] py-[11.5px] ${FONTS.nav} font-medium text-[15px] text-(--text-primary) text-center hover:bg-(--accent-primary) transition-all duration-200`}
             >
               {t("nav.contact")}
             </a>
+            <div className="flex justify-center pt-2">
+              <ThemeToggle />
+            </div>
           </div>
         )}
       </div>
