@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { useTranslation } from "../i18n/useTranslation";
 import { FONTS, SPACING } from "../constants";
 
@@ -19,11 +20,52 @@ export default function Contact() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Message sent successfully!");
-    setFormData({ name: "", email: "", service: "", message: "" });
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      // EmailJS configuration
+      // Replace these with your actual EmailJS credentials from https://www.emailjs.com/
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_qco4okh";
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_55bmak5";
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "l4jkIrJ8dO0l7IIHQ";
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        service_type: formData.service,
+        message: formData.message,
+        to_name: "Ahmed Tamer", // Your name
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+
+      setSubmitStatus({
+        type: "success",
+        message:
+          t("contact.successMessage") ||
+          "Message sent successfully! I'll get back to you soon.",
+      });
+      setFormData({ name: "", email: "", service: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      setSubmitStatus({
+        type: "error",
+        message:
+          t("contact.errorMessage") ||
+          "Failed to send message. Please try again or email me directly.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -165,12 +207,28 @@ export default function Contact() {
               />
             </div>
 
+            {/* Status Message */}
+            {submitStatus.type && (
+              <div
+                className={`p-4 rounded-[10px] ${
+                  submitStatus.type === "success"
+                    ? "bg-green-500/10 border border-green-500/20 text-green-500"
+                    : "bg-red-500/10 border border-red-500/20 text-red-500"
+                } ${FONTS.body} text-[14px]`}
+              >
+                {submitStatus.message}
+              </div>
+            )}
+
             {/* Submit Button */}
             <button
               type="submit"
-              className={`w-full h-[62px] bg-(--accent-primary) rounded-[10px] ${FONTS.button} font-bold text-[16px] text-white leading-normal hover:opacity-90 transition-all duration-200`}
+              disabled={isSubmitting}
+              className={`w-full h-[62px] bg-(--accent-primary) rounded-[10px] ${FONTS.button} font-bold text-[16px] text-white leading-normal hover:opacity-90 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed`}
             >
-              {t("contact.submit")}
+              {isSubmitting
+                ? t("contact.sending") || "Sending..."
+                : t("contact.submit")}
             </button>
           </form>
         </div>

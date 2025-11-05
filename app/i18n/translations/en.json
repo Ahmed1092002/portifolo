@@ -39,10 +39,6 @@
         "description": "Connecting apps to RESTful APIs using Dio and Axios with efficient state management and error handling."
       },
       {
-        "title": "Firebase & Paymob Integration",
-        "description": "Implementing authentication, analytics, and payment features using Firebase and Paymob API."
-      },
-      {
         "title": "Design Systems & Clean Architecture",
         "description": "Creating modular architectures and UI component libraries to maintain code scalability and consistency across projects."
       }
@@ -157,7 +153,10 @@
     ],
     "message": "Message",
     "submit": "Send Message",
-    "successMessage": "Message sent successfully!"
+    "sending": "Sending...",
+    "successMessage": "Message sent successfully! I'll get back to you soon.",
+    "errorMessage": "Failed to send message. Please try again or email me directly.",
+    "selectService": "Select a Service"
   },
   "footer": {
     "cta": "Let’s Work Together -",
