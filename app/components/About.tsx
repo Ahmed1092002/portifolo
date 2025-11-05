@@ -1,9 +1,72 @@
 "use client";
+import { useState } from "react";
 import { useTranslation } from "../i18n/useTranslation";
-import { FONTS, SPACING } from "../constants";
+import { FONTS, SPACING, RESUME_LINK_PDF } from "../constants";
 
 export default function About() {
   const { t } = useTranslation();
+  const [downloading, setDownloading] = useState(false);
+  const [downloadStatus, setDownloadStatus] = useState<
+    "idle" | "starting" | "done" | "error"
+  >("idle");
+
+  // Trigger download without navigating away or opening a new tab
+  const handleDownloadResume = () => {
+    setDownloading(true);
+    setDownloadStatus("starting");
+    try {
+      const iframe = document.createElement("iframe");
+      iframe.style.display = "none";
+      let finished = false;
+
+      // Fallback: Some browsers may not fire events for downloads
+      const timeoutId = window.setTimeout(() => {
+        if (finished) return;
+        finished = true;
+        setDownloadStatus("done");
+        setDownloading(false);
+        try {
+          document.body.removeChild(iframe);
+        } catch {}
+      }, 12_000);
+
+      // Success handler
+      const onLoad = () => {
+        if (finished) return;
+        finished = true;
+        window.clearTimeout(timeoutId);
+        setDownloadStatus("done");
+        setDownloading(false);
+        try {
+          document.body.removeChild(iframe);
+        } catch {}
+      };
+
+      // Error handler (rare for downloads, but keep just in case)
+      const onError = () => {
+        if (finished) return;
+        finished = true;
+        window.clearTimeout(timeoutId);
+        setDownloadStatus("error");
+        setDownloading(false);
+        try {
+          document.body.removeChild(iframe);
+        } catch {}
+        // last-resort fallback: same-tab navigation
+        window.location.href = RESUME_LINK_PDF;
+      };
+
+      iframe.addEventListener("load", onLoad);
+      iframe.addEventListener("error", onError);
+      iframe.src = RESUME_LINK_PDF;
+      document.body.appendChild(iframe);
+    } catch {
+      // Fallback: navigate in the same tab (last resort)
+      setDownloading(false);
+      setDownloadStatus("error");
+      window.location.href = RESUME_LINK_PDF;
+    }
+  };
 
   return (
     <section
@@ -37,13 +100,52 @@ export default function About() {
         </div>
 
         {/* Download Resume Button */}
-        <div className="flex justify-center mt-16">
-          <a
-            href="#"
-            className={`inline-block border border-(--accent-primary) rounded-[55px] px-[40px] py-[18.5px] ${FONTS.nav} font-medium text-[15px] text-(--text-primary) hover:bg-(--accent-primary) transition-all duration-200`}
+        <div className="flex flex-col items-center mt-16 gap-3">
+          <button
+            type="button"
+            onClick={handleDownloadResume}
+            disabled={downloading}
+            className={`inline-flex items-center gap-2 border border-(--accent-primary) rounded-[55px] px-10 py-[18.5px] ${FONTS.nav} font-medium text-[15px] text-(--text-primary) hover:bg-(--accent-primary) transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed`}
           >
-            {t("about.downloadResume")}
-          </a>
+            {downloading && (
+              <svg
+                className="animate-spin h-4 w-4 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                ></path>
+              </svg>
+            )}
+            {downloading
+              ? t("about.downloading") || "Preparing download..."
+              : t("about.downloadResume")}
+          </button>
+          <div
+            aria-live="polite"
+            className={`${FONTS.body} text-[12px] text-(--text-dimmed)`}
+          >
+            {downloadStatus === "starting" &&
+              (t("about.preparingFile") || "Preparing your file...")}
+            {downloadStatus === "done" &&
+              (t("about.ready") || "Download started")}
+            {downloadStatus === "error" &&
+              (t("about.downloadError") ||
+                "Couldn't start download, opening file instead...")}
+          </div>
         </div>
       </div>
     </section>

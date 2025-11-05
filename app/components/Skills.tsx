@@ -83,7 +83,7 @@ export default function Skills() {
         </div>
 
         {/* Services Grid - Row 2 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[936px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-5 max-w-[936px] mx-auto">
           {/* AI Chatbots - Featured Card */}
           <div className="border border-(--border-color) rounded-[10px] p-6 hover:border-(--accent-primary) transition-all duration-300 md:col-span-1">
             <div className="flex flex-col h-full">
@@ -104,7 +104,7 @@ export default function Skills() {
           </div>
 
           {/* Machine Learning Card */}
-          <div className="border border-(--border-color) rounded-[10px] p-6 hover:border-(--accent-primary) transition-all duration-300">
+          {/* <div className="border border-(--border-color) rounded-[10px] p-6 hover:border-(--accent-primary) transition-all duration-300">
             <div className="bg-[#f5f8ff] w-11 h-11 rounded-[9px] flex items-center justify-center mb-6 text-2xl text-[#1a1a1a]">
               {services[4]?.icon}
             </div>
@@ -118,7 +118,7 @@ export default function Skills() {
             >
               {services[4]?.description ?? ""}
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

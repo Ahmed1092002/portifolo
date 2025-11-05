@@ -28,11 +28,17 @@ export const SPACING = {
 } as const;
 
 export const SOCIAL_LINKS = [
-  { name: "Twitter", url: "https://twitter.com" },
-  { name: "LinkedIn", url: "https://linkedin.com" },
-  { name: "GitHub", url: "https://github.com" },
-  { name: "Facebook", url: "https://facebook.com" },
-  { name: "Instagram", url: "https://instagram.com" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/ahmedtamer109" },
+  { name: "GitHub", url: "https://github.com/Ahmed1092002" },
+  { name: "Facebook", url: "https://www.facebook.com/ahmed.tamer.elsayad" },
+  // { name: "Instagram", url: "https://instagram.com" },
 ] as const;
 
 export const CONTACT_EMAIL = "Georgy@gmail.com";
+
+// Resume/Portfolio assets
+export const RESUME_LINK_PDF =
+  process.env.NEXT_PUBLIC_RESUME_LINK_PDF ||
+  "https://docs.google.com/document/d/1VfRZjbZdR1-BnIt4uKoZ8PoVa2bjSaHI/export?format=pdf";
+export const RESUME_LINK_DOCX =
+  "https://docs.google.com/document/d/1VfRZjbZdR1-BnIt4uKoZ8PoVa2bjSaHI/export?format=docx";

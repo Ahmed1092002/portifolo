@@ -20,7 +20,11 @@
     "paragraph1": "Hey there! I'm Ahmed Tamer, a Software Engineer with a passion for building high-quality, scalable, and user-friendly applications. My focus lies in Flutter and React development, covering both mobile and web platforms.",
     "paragraph2": "I’ve worked on multiple in-house and client projects under Applogica, including ERP systems, invoice management, and AI-powered chat applications integrated with LiveKit and Paymob. I value clean architecture, component reusability, and maintainable codebases.",
     "paragraph3": "Currently, I’m also expanding my skills into backend development using Spring Boot, learning about RESTful APIs, microservices, and database design to become a full-stack developer.",
-    "downloadResume": "Download Resume"
+    "downloadResume": "Download Resume",
+    "preparingFile": "Preparing your file...",
+    "ready": "Download started",
+    "downloadError": "Couldn't start download, opening file instead...",
+    "downloading": "Downloading..."
   },
   "services": {
     "title": "What I Do",
