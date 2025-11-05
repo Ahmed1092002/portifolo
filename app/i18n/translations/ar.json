@@ -60,6 +60,7 @@
     "title": "المشاريع",
     "subtitle": "بعض من أعمالي",
     "viewAll": "عرض الكل",
+    "demoLink": "عرض مباشر",
     "skills": [
       "Dart",
       "Flutter",
@@ -118,7 +119,19 @@
       },
       {
         "title": "تطبيق إدارة التذاكر (React)",
-        "description": "تطوير نظام ذكي لإدارة التذاكر والدعم الفني باستخدام React وREST APIs."
+        "description": "بناء لوحة تحكم لإدارة تذاكر الدعم الفني مع إنشاء التذاكر، وتتبع الحالة، والتعليقات المتسلسلة باستخدام React وREST APIs."
+      },
+      {
+        "title": "نظام حجز الفنادق (React)",
+        "link": "https://github.com/Ahmed1092002/react-hotel-reservation-system",
+        "demo": "https://react-hotel-reservation-system-eight.vercel.app/",
+        "description": "نظام حديث لحجز الفنادق مبني باستخدام React وRedux وMaterial-UI."
+      },
+      {
+        "title": "تطبيق الدردشة (React)",
+        "link": "https://github.com/Ahmed1092002/chat",
+        "demo": "https://chat-green-omega.vercel.app/login",
+        "description": "تطبيق دردشة حديث مبني باستخدام React وRedux وFirebase وMaterial-UI."
       },
       {
         "title": "موقع شركة Applogica (Next.js)",
@@ -129,11 +142,24 @@
         "description": "تطوير منصة حجز تربط بين التجار والعملاء للفنادق وقاعات الأفراح في ليبيا باستخدام Flutter وFirebase وDio."
       },
       {
+        "title": "تطبيق كيتابي (Flutter)",
+        "link": "https://github.com/Ahmed1092002/ketaby/tree/master",
+        "description": "بناء تطبيق تجارة إلكترونية لشراء الكتب المتعلقة بالبرمجة، مع إدارة الحالة واسترجاع بيانات API"
+      },
+      {
         "title": "تطبيق العمال (Flutter)",
+        "link": "https://github.com/Ahmed1092002/Workers_App",
+
         "description": "منصة تربط بين الشركات والعمال مع دعم المحادثات ومشاركة الملفات والإشعارات. مبني باستخدام Flutter وFirebase وHive."
       },
       {
+        "title": "القران(Flutter)",
+        "link": "https://github.com/Ahmed1092002/quran_app",
+        "description": "تطوير تطبيق لمواعيد الصلاة، والتلاوات، والوصول إلى تلاوات العلماء، مع دمج مصادقة المستخدم وإعداد الحساب"
+      },
+      {
         "title": "منصة أرشدني (مشروع التخرج)",
+        "link": "https://github.com/Ahmed1092002/Graduation_Project_Arshdny/tree/main",
         "description": "منصة اجتماعية لدعم اللاجئين في البحث عن وظائف والتعليم والتواصل. تم بناؤها باستخدام Flutter و .NET وPython وFirebase."
       }
     ]

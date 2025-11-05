@@ -61,6 +61,7 @@
     "subtitle": "Some of My Work",
     "viewAll": "View All",
     "viewLess": "View Less",
+    "demoLink": "Live Demo",
     "skills": [
       "Dart",
       "Flutter",
@@ -119,7 +120,19 @@
       },
       {
         "title": "Ticketing App (React)",
-        "description": "Developed a smart ticketing system allowing users to create, manage, and track support tickets. Built with React and REST APIs."
+        "description": "Built a customer support ticketing dashboard with ticket creation, status tracking, and threaded comments using React and REST APIs."
+      },
+      {
+        "title": "React Hotel Reservation System (React)",
+        "link": "https://github.com/Ahmed1092002/react-hotel-reservation-system",
+        "demo": "https://react-hotel-reservation-system-eight.vercel.app/",
+        "description": "A modern hotel reservation system built with React, Redux, and Material-UI."
+      },
+      {
+        "title": "Chat Application (React)",
+        "link": "https://github.com/Ahmed1092002/chat",
+        "demo": "https://chat-green-omega.vercel.app/login",
+        "description": "A modern chat application built with React, Redux, and Material-UI."
       },
       {
         "title": "Applogica Company Website (Next.js)",
@@ -131,10 +144,22 @@
       },
       {
         "title": "Worker’s App (Flutter)",
+        "link": "https://github.com/Ahmed1092002/Workers_App",
         "description": "A job platform connecting businesses and workers with chat, file sharing, and notifications. Built with Flutter, Firebase, and Hive."
       },
       {
+        "title": "El Quran App(Flutter)",
+        "link": "https://github.com/Ahmed1092002/quran_app",
+        "description": "Developed an app for prayer timings, recitations, and accessing scholar recitations, incorporating user authentication and account setup"
+      },
+      {
+        "title": "Ketapy E-commerce(Flutter)",
+        "link": "https://github.com/Ahmed1092002/ketaby/tree/master",
+        "description": "Built an e-commerce application for buying programming-related books, managing state and API data retrieval"
+      },
+      {
         "title": "Arshdny Platform (Graduation Project)",
+        "link": "https://github.com/Ahmed1092002/Graduation_Project_Arshdny/tree/main",
         "description": "A social platform supporting refugees with job search, education, and communication. Built with Flutter, .NET, Python, and Firebase."
       }
     ]
