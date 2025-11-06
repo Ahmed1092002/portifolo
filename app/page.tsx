@@ -1,3 +1,5 @@
+"use client";
+import dynamic from "next/dynamic";
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -7,9 +9,23 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import FloatingShapes from "./components/FloatingShapes";
-import ParticleBackground from "./components/ParticleBackground";
-import FloatingObjects from "./components/FloatingObjects";
+
+// Lazy load heavy 3D backgrounds for better initial performance
+const FloatingShapes = dynamic(() => import("./components/FloatingShapes"), {
+  ssr: false,
+  loading: () => null,
+});
+const ParticleBackground = dynamic(
+  () => import("./components/ParticleBackground"),
+  {
+    ssr: false,
+    loading: () => null,
+  }
+);
+const FloatingObjects = dynamic(() => import("./components/FloatingObjects"), {
+  ssr: false,
+  loading: () => null,
+});
 
 export default function Home() {
   return (

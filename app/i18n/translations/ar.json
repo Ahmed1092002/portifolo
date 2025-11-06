@@ -6,10 +6,13 @@
     "experience": "الخبرة",
     "skills": "المهارات",
     "projects": "المشاريع",
-    "contact": "اتصل بي"
+    "contact": "اتصل بي",
+    "downloadCV": "تحميل السيرة الذاتية"
   },
   "hero": {
     "name": "أحمد تامر السيد",
+    "nav": "أحمد تامر",
+
     "title": "مطور Flutter وويب",
     "description": "مهندس برمجيات متخصص في بيئة Flutter وReact، بخبرة في تطوير تطبيقات الموبايل والويب، وتصميم الأنظمة المعمارية النظيفة والواجهات القابلة لإعادة الاستخدام.",
     "contactMe": "تواصل معي"
@@ -99,67 +102,91 @@
     "items": [
       {
         "title": "نظام ERP (React)",
+        "company": "Applogica",
+
         "description": "بناء وصيانة نظام ERP باستخدام React وTypeScript. تم تطبيق تصميم نظام المكونات باستخدام Atomic Design وStorybook، ونشره كمكتبة NPM لضمان اتساق الواجهة."
       },
       {
         "title": "نظام الفواتير الإلكتروني SaaS (React + Vite)",
+        "company": "Applogica",
+
         "description": "تطوير نظام لإدارة الفواتير مدمج مع مصلحة الضرائب المصرية. تم تحسين الأداء وتجربة المستخدم وإضافة خصائص إدارة متعددة للشركات."
       },
       {
         "title": "مساعد الفواتير الذكي (Next.js + LiveKit)",
+        "company": "Applogica",
+
         "description": "تطوير مساعد ذكي يتعامل مع الفواتير ويتفاعل مع المستخدم في الوقت الفعلي باستخدام WebRTC وLiveKit."
       },
       {
         "title": "تطبيق نقاط البيع (POS) (Vite)",
+        "company": "Applogica",
+
         "description": "تطوير نظام نقاط بيع عبر الويب لإدارة المنتجات والمعاملات في الوقت الحقيقي بالتكامل مع واجهات برمجة التطبيقات الخلفية."
       },
       {
         "title": "تطبيق فلوس (Flutter)",
+        "company": "Applogica",
+
         "description": "تطبيق لتحويل الأموال يعتمد على Paymob API لإتمام المعاملات والتحقق من المستخدمين. استخدم Cubit لإدارة الحالة وFirebase للتحليلات."
       },
       {
         "title": "تطبيق إدارة التذاكر (React)",
+        "company": "عمل حر",
+
         "description": "بناء لوحة تحكم لإدارة تذاكر الدعم الفني مع إنشاء التذاكر، وتتبع الحالة، والتعليقات المتسلسلة باستخدام React وREST APIs."
       },
       {
         "title": "نظام حجز الفنادق (React)",
         "link": "https://github.com/Ahmed1092002/react-hotel-reservation-system",
         "demo": "https://react-hotel-reservation-system-eight.vercel.app/",
-        "description": "نظام حديث لحجز الفنادق مبني باستخدام React وRedux وMaterial-UI."
+        "description": "نظام حديث لحجز الفنادق مبني باستخدام React وRedux وMaterial-UI.",
+        "company": "عمل حر"
       },
       {
         "title": "تطبيق الدردشة (React)",
         "link": "https://github.com/Ahmed1092002/chat",
         "demo": "https://chat-green-omega.vercel.app/login",
-        "description": "تطبيق دردشة حديث مبني باستخدام React وRedux وFirebase وMaterial-UI."
+        "description": "تطبيق دردشة حديث مبني باستخدام React وRedux وFirebase وMaterial-UI.",
+        "company": "عمل حر"
       },
       {
         "title": "موقع شركة Applogica (Next.js)",
-        "description": "تطوير الموقع الرسمي للشركة باستخدام Next.js مع التركيز على تحسين محركات البحث والتصميم المتجاوب وتنظيم المحتوى."
+        "description": "تطوير الموقع الرسمي للشركة باستخدام Next.js مع التركيز على تحسين محركات البحث والتصميم المتجاوب وتنظيم المحتوى.",
+        "company": "Applogica"
       },
       {
         "title": "منصة احجزلي (Flutter)",
+        "company": "عمل حر",
+
         "description": "تطوير منصة حجز تربط بين التجار والعملاء للفنادق وقاعات الأفراح في ليبيا باستخدام Flutter وFirebase وDio."
       },
       {
         "title": "تطبيق كيتابي (Flutter)",
         "link": "https://github.com/Ahmed1092002/ketaby/tree/master",
+        "company": "عمل حر",
+
         "description": "بناء تطبيق تجارة إلكترونية لشراء الكتب المتعلقة بالبرمجة، مع إدارة الحالة واسترجاع بيانات API"
       },
       {
         "title": "تطبيق العمال (Flutter)",
         "link": "https://github.com/Ahmed1092002/Workers_App",
+        "company": "عمل حر",
 
         "description": "منصة تربط بين الشركات والعمال مع دعم المحادثات ومشاركة الملفات والإشعارات. مبني باستخدام Flutter وFirebase وHive."
       },
       {
         "title": "القران(Flutter)",
         "link": "https://github.com/Ahmed1092002/quran_app",
+        "company": "عمل حر",
+
         "description": "تطوير تطبيق لمواعيد الصلاة، والتلاوات، والوصول إلى تلاوات العلماء، مع دمج مصادقة المستخدم وإعداد الحساب"
       },
       {
         "title": "منصة أرشدني (مشروع التخرج)",
         "link": "https://github.com/Ahmed1092002/Graduation_Project_Arshdny/tree/main",
+        "company": "عمل حر",
+
         "description": "منصة اجتماعية لدعم اللاجئين في البحث عن وظائف والتعليم والتواصل. تم بناؤها باستخدام Flutter و .NET وPython وFirebase."
       }
     ]

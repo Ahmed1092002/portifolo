@@ -2,8 +2,10 @@
 
 import { useTranslation } from "../i18n/useTranslation";
 import { FONTS, SPACING } from "../constants";
-import { useEffect, useState } from "react";
+import { useState, memo, useMemo } from "react";
 import Card3D from "./Card3D";
+import { motion } from "framer-motion";
+import { ExternalLink, Sparkles, ChevronRight } from "lucide-react";
 
 interface Project {
   title: string;
@@ -12,11 +14,11 @@ interface Project {
   image?: string;
   link?: string;
   demo?: string;
+  company?: string;
 }
 
-export default function Projects() {
+function Projects() {
   const { t } = useTranslation();
-  // Guard against initial non-array values while translations load
   const skillsRaw = t("projects.skills") as unknown;
   const skillTags: string[] = Array.isArray(skillsRaw)
     ? (skillsRaw as string[])
@@ -26,148 +28,236 @@ export default function Projects() {
   const projects: Project[] = Array.isArray(projectsRaw)
     ? (projectsRaw as Project[])
     : [];
-  const [visibleProjects, setVisibleProjects] = useState<Project[]>(
-    projects.slice(0, 6)
-  );
   const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [selectedTag, setSelectedTag] = useState<number>(0);
+
+  // Memoize visible projects calculation
+  const visibleProjects = useMemo(
+    () => (isVisible ? projects : projects.slice(0, 6)),
+    [isVisible, projects]
+  );
 
   function viewMoreProjects() {
-    if (!isVisible) {
-      setVisibleProjects(projects);
-      setIsVisible(true);
-    } else {
-      setVisibleProjects(projects.slice(0, 6));
-      setIsVisible(false);
-    }
+    setIsVisible(!isVisible);
   }
-
-  useEffect(() => {
-    setVisibleProjects(isVisible ? projects : projects.slice(0, 6));
-  }, [isVisible, projects]);
 
   return (
     <section
       id="projects"
-      className={`${SPACING.sectionPadding} ${SPACING.containerPadding}`}
+      className={`${SPACING.sectionPadding} ${SPACING.containerPadding} relative overflow-hidden`}
     >
-      <div className="max-w-[1512px] mx-auto">
+      {/* Background Decorations */}
+      <div className="absolute inset-0 -z-10">
+        <motion.div
+          animate={{
+            x: [0, 100, 0],
+            y: [0, 50, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute top-40 right-20 w-72 h-72 bg-gradient-to-r from-[#4fc3f7]/10 to-[#764ba2]/10 rounded-full blur-3xl"
+        />
+      </div>
+
+      <div className="max-w-[1512px] mx-auto relative">
         {/* Section Header */}
-        <div className="flex flex-col items-center mb-8 sm:mb-10 md:mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col items-center mb-12 sm:mb-14 md:mb-16"
+        >
+          <motion.div
+            initial={{ scale: 0, rotate: -180 }}
+            whileInView={{ scale: 1, rotate: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-4"
+          >
+            <Sparkles className="w-8 h-8 text-[#4fc3f7]" />
+          </motion.div>
+
           <h2
-            className={`${FONTS.body} font-extrabold text-3xl sm:text-4xl md:text-[45px] text-(--text-primary) tracking-tight md:tracking-[-1.35px] mb-2`}
+            className={`${FONTS.body} font-extrabold text-3xl sm:text-4xl md:text-[45px] text-(--text-primary) tracking-tight md:tracking-[-1.35px] mb-3 relative`}
           >
             {t("projects.title")}
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: "100%" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-[#4fc3f7] to-[#764ba2] rounded-full"
+            />
           </h2>
           <p
             className={`${FONTS.body} font-semibold text-xs sm:text-sm md:text-[14px] bg-linear-to-r from-(--accent-gradient-start) to-(--accent-gradient-end) bg-clip-text text-transparent tracking-tight md:tracking-[-0.42px]`}
           >
             {t("projects.subtitle")}
           </p>
-        </div>
-
-        {/* Skills Tags */}
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-5 lg:gap-[55px] mb-10 sm:mb-12 md:mb-16 px-4">
+        </motion.div>
+        {/* Skills Tags - Enhanced */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-14 md:mb-16 px-4"
+        >
           {skillTags.map((tag, index) => (
-            <div
+            <motion.button
               key={index}
-              className={`
-                rounded-[50px] px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 ${
-                  FONTS.body
-                } font-normal text-sm sm:text-[15px] md:text-[16px] leading-normal transition-all duration-200
-                ${
-                  index === 0
-                    ? "bg-(--border-light) text-(--text-primary)"
-                    : "border border-(--border-light) text-(--text-muted) hover:border-(--accent-primary) hover:text-(--accent-primary) cursor-pointer"
-                }
-              `}
+              onClick={() => setSelectedTag(index)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`relative rounded-full px-5 py-2.5 sm:px-6 sm:py-3 ${
+                FONTS.body
+              } font-medium text-sm sm:text-[15px] md:text-[16px] transition-all duration-300 ${
+                selectedTag === index
+                  ? "text-white"
+                  : "border border-(--border-light) text-(--text-muted) hover:border-(--accent-primary) hover:text-(--accent-primary)"
+              }`}
             >
-              {tag}
-            </div>
-          ))}
-        </div>
+              {selectedTag === index && (
+                <motion.div
+                  layoutId="activeTag"
+                  className="absolute inset-0 bg-gradient-to-r from-[#4fc3f7] to-[#764ba2] rounded-full"
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                />
+              )}
+              <span className="relative z-10">{tag}</span>
 
-        {/* Projects Grid - Row 1 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 sm:gap-12 md:gap-16 lg:gap-10 mb-8 sm:mb-10 max-w-full sm:max-w-[650px] md:max-w-[900px] lg:max-w-[1144px] mx-auto px-4 sm:px-0">
+              {/* Glow effect for active tag */}
+              {selectedTag === index && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="absolute -inset-1 bg-gradient-to-r from-[#4fc3f7] to-[#764ba2] rounded-full blur-lg opacity-50 -z-10"
+                />
+              )}
+            </motion.button>
+          ))}
+        </motion.div>
+        {/* Projects Grid - Enhanced */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12 max-w-full sm:max-w-[650px] md:max-w-[900px] lg:max-w-[1200px] mx-auto px-4 sm:px-0 mb-12">
           {visibleProjects.map((project, index) => (
-            <Card3D key={index} className="group h-full">
-              {/* Content */}
-              <div className="flex items-end justify-between gap-3 h-full p-5 rounded-lg bg-(--background)/50 backdrop-blur-sm border border-(--border-color)/50 hover:border-(--accent-primary) transition-all duration-300">
-                <div className="flex-1 flex-col self-start">
-                  <h3 className="font-['Inter'] font-bold text-base sm:text-lg md:text-[20px] text-(--text-muted) leading-normal mb-3 sm:mb-4 group-hover:text-(--accent-primary) transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="font-['Inter'] font-normal text-xs sm:text-sm md:text-[14px] text-(--text-dimmed) leading-normal">
-                    {project.description}
-                  </p>
-                  <p className="font-['Inter'] font-normal text-xs sm:text-sm md:text-[14px] text-(--text-dimmed) leading-normal">
-                    {project.demo && (
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline hover:text-(--accent-primary) transition-colors"
-                      >
-                        {t("projects.demoLink")}
-                      </a>
-                    )}
-                  </p>
+            <motion.div
+              key={`${project.title}-${index}`}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              layout
+            >
+              <Card3D className="group h-full">
+                <div className="relative flex flex-col h-full p-6 sm:p-7 rounded-2xl bg-(--background)/50 backdrop-blur-xl border border-(--border-color)/50 hover:border-(--accent-primary) transition-all duration-500 overflow-hidden">
+                  {/* Background gradient effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#4fc3f7]/0 to-[#764ba2]/0 group-hover:from-[#4fc3f7]/10 group-hover:to-[#764ba2]/10 transition-all duration-500 rounded-2xl" />
+
+                  {/* Content */}
+                  <div className="relative z-10 flex-1 flex flex-col">
+                    {/* Number Badge */}
+                    <div className="absolute -top-3 -left-3 pb-3">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#4fc3f7] to-[#764ba2] flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                        {String(index + 1).padStart(2, "0")}
+                      </div>
+                    </div>
+
+                    <div className="mt-5 flex-1">
+                      <h3 className="font-['Inter'] font-bold text-lg sm:text-xl md:text-[22px] text-(--text-primary) mb-3 sm:mb-4 group-hover:text-[#4fc3f7] transition-colors duration-300">
+                        {project.title}
+                      </h3>
+                      <p className="font-['Inter'] font-normal text-sm sm:text-base md:text-[15px] text-(--text-secondary) leading-relaxed mb-4">
+                        {project.description}
+                      </p>
+
+                      {/* Demo Link */}
+                      {project.demo && (
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-sm text-[#4fc3f7] hover:text-[#764ba2] transition-colors mb-4"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          {t("projects.demoLink")}
+                        </a>
+                      )}
+                    </div>
+
+                    {/* Action Button */}
+                    <div className="mt-auto pt-4 border-t border-(--border-color)/30">
+                      {project.link ? (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group/btn inline-flex items-center gap-2 text-sm font-medium text-(--text-primary) hover:text-[#4fc3f7] transition-colors"
+                        >
+                          View Project
+                          <motion.div
+                            animate={{
+                              x: [0, 5, 0],
+                            }}
+                            transition={{
+                              duration: 1.5,
+                              repeat: Infinity,
+                              ease: "easeInOut",
+                            }}
+                          >
+                            <ChevronRight className="w-4 h-4" />
+                          </motion.div>
+                        </a>
+                      ) : (
+                        <span className="text-sm text-(--text-dimmed)">
+                          {project.company}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Decorative corner */}
+                  <div className="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-[#4fc3f7]/20 via-transparent to-transparent rounded-tl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
-
-                {/* Arrow Button - Opens link if available */}
-                {project.link ? (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="shrink-0 bg-gradient-to-br from-[#4fc3f7] to-[#764ba2] rounded-full p-1.5 sm:p-2 rotate-180 scale-y-[-1] hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-[0_0_20px_rgba(79,195,247,0.5)]"
-                    aria-label={`View ${project.title}`}
-                  >
-                    <svg
-                      className="w-5 h-5 sm:w-6 sm:h-6"
-                      viewBox="0 0 23 23"
-                      fill="none"
-                    >
-                      <path
-                        d="M8 5L15 12L8 19"
-                        stroke="white"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </a>
-                ) : (
-                  <button className="shrink-0 bg-gradient-to-br from-[#4fc3f7] to-[#764ba2] rounded-full p-1.5 sm:p-2 rotate-180 scale-y-[-1] hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-[0_0_20px_rgba(79,195,247,0.5)] opacity-50 cursor-not-allowed">
-                    <svg
-                      className="w-5 h-5 sm:w-6 sm:h-6"
-                      viewBox="0 0 23 23"
-                      fill="none"
-                    >
-                      <path
-                        d="M8 5L15 12L8 19"
-                        stroke="white"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </button>
-                )}
-              </div>
-            </Card3D>
+              </Card3D>
+            </motion.div>
           ))}
-        </div>
-
-        {/* View All Button */}
-        <div className="flex justify-center px-4">
-          <button
+        </div>{" "}
+        {/* View All Button - Enhanced */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex justify-center px-4"
+        >
+          <motion.button
             onClick={viewMoreProjects}
-            className="border border-(--border-light) rounded-[75px] px-8 py-2.5 sm:px-9 sm:py-3 md:px-10 md:py-[13px] font-['Montserrat'] font-medium text-sm sm:text-base md:text-[15px] text-(--text-primary) hover:border-(--accent-primary) hover:bg-(--accent-primary) transition-all duration-200"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="group relative overflow-hidden border border-(--border-light) rounded-full px-10 py-3.5 sm:px-12 sm:py-4 font-['Montserrat'] font-medium text-sm sm:text-base md:text-[15px] text-(--text-primary) hover:border-[#4fc3f7] transition-all duration-300"
           >
-            {isVisible ? t("projects.viewLess") : t("projects.viewAll")}
-          </button>
-        </div>
+            <span className="relative z-10 flex items-center gap-2">
+              {isVisible ? t("projects.viewLess") : t("projects.viewAll")}
+              <motion.div
+                animate={{
+                  rotate: isVisible ? 180 : 0,
+                }}
+                transition={{ duration: 0.3 }}
+              >
+                <ChevronRight className="w-4 h-4 rotate-90" />
+              </motion.div>
+            </span>
+
+            {/* Hover background */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#4fc3f7]/10 to-[#764ba2]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );
 }
+
+export default memo(Projects);
