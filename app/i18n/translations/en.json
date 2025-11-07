@@ -249,11 +249,17 @@
     "selectService": "Select a Service"
   },
   "footer": {
-    "cta": "Let’s Work Together -",
+    "cta": "Let's Work Together -",
     "email": "ahmedtamerelsayed17@gmail.com",
     "github": "https://github.com/Ahmed1092002",
     "linkedin": "https://www.linkedin.com/in/ahmedtamer109",
     "phone": "+201000807490",
     "copyright": "© 2025 Ahmed Tamer. All rights reserved."
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, the page you're looking for doesn't exist or has been moved.",
+    "goHome": "Go to Homepage",
+    "goBack": "Go Back"
   }
 }
