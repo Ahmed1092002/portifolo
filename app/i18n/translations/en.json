@@ -239,9 +239,7 @@
     "serviceOptions": [
       "Mobile App Development",
       "Web App Development",
-      "UI/UX Design",
-      "API Integration",
-      "Firebase & Paymob Integration"
+      "API Integration"
     ],
     "message": "Message",
     "submit": "Send Message",
