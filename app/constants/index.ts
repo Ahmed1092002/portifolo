@@ -34,11 +34,10 @@ export const SOCIAL_LINKS = [
   // { name: "Instagram", url: "https://instagram.com" },
 ] as const;
 
-export const CONTACT_EMAIL = "Georgy@gmail.com";
 
 // Resume/Portfolio assets
 export const RESUME_LINK_PDF =
   process.env.NEXT_PUBLIC_RESUME_LINK_PDF ||
   "https://docs.google.com/document/d/1VfRZjbZdR1-BnIt4uKoZ8PoVa2bjSaHI/export?format=pdf";
-export const RESUME_LINK_DOCX =
+export const RESUME_LINK_DOCX =  process.env.NEXT_PUBLIC_RESUME_LINK_PDF ||
   "https://docs.google.com/document/d/1VfRZjbZdR1-BnIt4uKoZ8PoVa2bjSaHI/export?format=docx";

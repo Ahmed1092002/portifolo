@@ -47,6 +47,35 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Performance Optimizations - GPU Acceleration */
+@layer utilities {
+  /* GPU acceleration for frequently animated elements */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-opacity {
+    will-change: opacity;
+  }
+
+  .will-change-transform-opacity {
+    will-change: transform, opacity;
+  }
+
+  /* Hardware acceleration */
+  .gpu-accelerate {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Smooth animations */
+  .smooth-animation {
+    transform: translateZ(0);
+    will-change: transform, opacity;
+  }
+}
+
 /* RTL Support */
 [dir="rtl"] {
   direction: rtl;
