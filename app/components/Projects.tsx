@@ -165,7 +165,7 @@ function Projects() {
                       </div>
                     </div>
 
-                    <div className="mt-5 flex-1">
+                    <div className="mt-5 flex-1 pt-4">
                       <h3 className="font-['Inter'] font-bold text-lg sm:text-xl md:text-[22px] text-(--text-primary) mb-3 sm:mb-4 group-hover:text-[#4fc3f7] transition-colors duration-300">
                         {project.title}
                       </h3>

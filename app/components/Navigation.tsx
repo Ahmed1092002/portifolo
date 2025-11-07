@@ -5,8 +5,9 @@ import Link from "next/link";
 import { useTranslation } from "../i18n/useTranslation";
 import { useLanguage } from "../i18n/LanguageContext";
 import { useTheme } from "../context/ThemeContext";
-import { FONTS } from "../constants";
+import { FONTS, RESUME_LINK_PDF } from "../constants";
 import { motion, AnimatePresence } from "framer-motion";
+import { triggerFileDownload } from "../utils/triggerDownload";
 
 const NAV_LINKS = [
   { key: "home", href: "#home" },
@@ -24,6 +25,7 @@ function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [downloading, setDownloading] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -129,29 +131,63 @@ function Navigation() {
           {/* Right Side Actions */}
           <div className="hidden lg:flex items-center gap-3">
             {/* Download CV Button - Primary */}
-            <a
-              href={process.env.NEXT_PUBLIC_RESUME_LINK_PDF}
-              download
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`group relative flex items-center gap-2 bg-(--accent-primary) text-white rounded-lg px-5 py-2.5 ${FONTS.nav} font-medium text-[15px] overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(79,195,247,0.4)] hover:scale-105`}
+            <button
+              type="button"
+              onClick={() => {
+                setDownloading(true);
+                triggerFileDownload(RESUME_LINK_PDF, {
+                  fallbackNavigate: true,
+                  onStatusChange: (status) => {
+                    if (status === "done" || status === "error") {
+                      setDownloading(false);
+                    }
+                  },
+                });
+              }}
+              disabled={downloading}
+              className={`group relative flex items-center gap-2 bg-(--accent-primary) text-white rounded-lg px-5 py-2.5 ${FONTS.nav} font-medium text-[15px] overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(79,195,247,0.4)] hover:scale-105 disabled:opacity-60 disabled:cursor-not-allowed`}
             >
               <span className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-              <svg
-                className="w-4 h-4 relative z-10 group-hover:animate-bounce"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
-              </svg>
+              {downloading ? (
+                <motion.svg
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                  className="w-4 h-4 relative z-10"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                  ></path>
+                </motion.svg>
+              ) : (
+                <svg
+                  className="w-4 h-4 relative z-10 group-hover:animate-bounce"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+              )}
               <span className="relative z-10">CV</span>
-            </a>
+            </button>
 
             {/* Settings Dropdown */}
             <div className="relative">
@@ -331,32 +367,66 @@ function Navigation() {
                 ))}
 
                 {/* Download CV Button - Mobile */}
-                <motion.a
+                <motion.button
+                  type="button"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
-                  href={process.env.NEXT_PUBLIC_RESUME_LINK_PDF}
-                  download
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`flex items-center justify-center gap-2 bg-(--accent-primary) text-white rounded-lg px-5 py-3 mx-4 mt-3 ${FONTS.nav} font-medium text-[15px] hover:shadow-[0_0_20px_rgba(79,195,247,0.4)] transition-all`}
+                  onClick={() => {
+                    setDownloading(true);
+                    triggerFileDownload(RESUME_LINK_PDF, {
+                      fallbackNavigate: true,
+                      onStatusChange: (status) => {
+                        if (status === "done" || status === "error") {
+                          setDownloading(false);
+                        }
+                      },
+                    });
+                    setIsMobileMenuOpen(false);
+                  }}
+                  disabled={downloading}
+                  className={`flex items-center justify-center gap-2 bg-(--accent-primary) text-white rounded-lg px-5 py-3 mx-4 mt-3 ${FONTS.nav} font-medium text-[15px] hover:shadow-[0_0_20px_rgba(79,195,247,0.4)] transition-all disabled:opacity-60 disabled:cursor-not-allowed`}
                 >
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    />
-                  </svg>
-                  {t("nav.downloadCV") || "Download CV"}
-                </motion.a>
+                  {downloading ? (
+                    <motion.svg
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                      className="w-4 h-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                      ></path>
+                    </motion.svg>
+                  ) : (
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                      />
+                    </svg>
+                  )}
+                  {downloading ? t("about.downloading") || "Preparing..." : t("nav.downloadCV") || "Download CV"}
+                </motion.button>
 
                 <div className="border-t border-(--border-color) mt-4 pt-4 mx-4">
                   {/* Theme Toggle Mobile */}

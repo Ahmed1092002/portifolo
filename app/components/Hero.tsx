@@ -1,13 +1,14 @@
 "use client";
 import { useTranslation } from "../i18n/useTranslation";
-import { FONTS, SPACING } from "../constants";
+import { FONTS, SPACING, RESUME_LINK_PDF } from "../constants";
 import Card3D from "./Card3D";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import Typewriter from "./Typewriter";
 import Parallax from "./Parallax";
 import { Sparkles, Star } from "lucide-react";
-import { memo, useCallback, useRef } from "react";
+import { memo, useCallback, useRef, useState } from "react";
 import Image from "next/image";
+import { triggerFileDownload } from "../utils/triggerDownload";
 
 function Hero() {
   const { t } = useTranslation();
@@ -16,6 +17,7 @@ function Hero() {
   // Faster spring for less computation
   const springX = useSpring(mouseX, { stiffness: 80, damping: 25 });
   const springY = useSpring(mouseY, { stiffness: 80, damping: 25 });
+  const [downloading, setDownloading] = useState(false);
 
   const rafId = useRef<number | undefined>(undefined);
 
@@ -291,34 +293,68 @@ function Hero() {
 
           {/* Secondary CTA - Enhanced */}
           <Card3D className="inline-block">
-            <motion.a
-              href={process.env.NEXT_PUBLIC_RESUME_LINK_PDF}
-              download
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`group relative inline-flex items-center gap-2 border-2 border-(--accent-primary) rounded-[75px] px-8 py-3 sm:px-10 sm:py-4 md:px-[50px] md:py-[18.5px] ${FONTS.nav} font-medium text-sm sm:text-base md:text-[15px] text-(--text-primary) bg-(--background)/50 backdrop-blur-sm hover:bg-(--accent-primary)/10 transition-all duration-300 overflow-hidden`}
+            <motion.button
+              type="button"
+              onClick={() => {
+                setDownloading(true);
+                triggerFileDownload(RESUME_LINK_PDF, {
+                  fallbackNavigate: true,
+                  onStatusChange: (status) => {
+                    if (status === "done" || status === "error") {
+                      setDownloading(false);
+                    }
+                  },
+                });
+              }}
+              disabled={downloading}
+              whileHover={{ scale: downloading ? 1 : 1.05 }}
+              whileTap={{ scale: downloading ? 1 : 0.95 }}
+              className={`group relative inline-flex items-center gap-2 border-2 border-(--accent-primary) rounded-[75px] px-8 py-3 sm:px-10 sm:py-4 md:px-[50px] md:py-[18.5px] ${FONTS.nav} font-medium text-sm sm:text-base md:text-[15px] text-(--text-primary) bg-(--background)/50 backdrop-blur-sm hover:bg-(--accent-primary)/10 transition-all duration-300 overflow-hidden disabled:opacity-60 disabled:cursor-not-allowed`}
             >
               {/* Hover Background */}
               <div className="absolute inset-0 bg-linear-to-r from-[#4fc3f7]/0 via-[#4fc3f7]/10 to-[#764ba2]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <span className="relative z-10 flex items-center gap-2">
-                <svg
-                  className="w-4 h-4 group-hover:animate-bounce"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  />
-                </svg>
-                Download CV
+                {downloading ? (
+                  <motion.svg
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                    className="w-4 h-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                    ></path>
+                  </motion.svg>
+                ) : (
+                  <svg
+                    className="w-4 h-4 group-hover:animate-bounce"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </svg>
+                )}
+                {downloading ? t("about.downloading") || "Preparing..." : "Download CV"}
               </span>
-            </motion.a>
+            </motion.button>
           </Card3D>
         </motion.div>
 

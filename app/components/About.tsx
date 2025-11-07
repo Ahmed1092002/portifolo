@@ -17,58 +17,16 @@ function About() {
   const handleDownloadResume = useCallback(() => {
     setDownloading(true);
     setDownloadStatus("starting");
-    try {
-      const iframe = document.createElement("iframe");
-      iframe.style.display = "none";
-      let finished = false;
-
-      // Fallback: Some browsers may not fire events for downloads
-      const timeoutId = window.setTimeout(() => {
-        if (finished) return;
-        finished = true;
-        setDownloadStatus("done");
-        setDownloading(false);
-        try {
-          document.body.removeChild(iframe);
-        } catch {}
-      }, 12_000);
-
-      // Success handler
-      const onLoad = () => {
-        if (finished) return;
-        finished = true;
-        window.clearTimeout(timeoutId);
-        setDownloadStatus("done");
-        setDownloading(false);
-        try {
-          document.body.removeChild(iframe);
-        } catch {}
-      };
-
-      // Error handler (rare for downloads, but keep just in case)
-      const onError = () => {
-        if (finished) return;
-        finished = true;
-        window.clearTimeout(timeoutId);
-        setDownloadStatus("error");
-        setDownloading(false);
-        try {
-          document.body.removeChild(iframe);
-        } catch {}
-        // last-resort fallback: same-tab navigation
-        window.location.href = RESUME_LINK_PDF;
-      };
-
-      iframe.addEventListener("load", onLoad);
-      iframe.addEventListener("error", onError);
-      iframe.src = RESUME_LINK_PDF;
-      document.body.appendChild(iframe);
-    } catch {
-      // Fallback: navigate in the same tab (last resort)
-      setDownloading(false);
-      setDownloadStatus("error");
-      window.location.href = RESUME_LINK_PDF;
-    }
+    // Use shared download utility (hidden iframe, fallback to same-tab nav)
+    import("../utils/triggerDownload").then(({ triggerFileDownload }) =>
+      triggerFileDownload(RESUME_LINK_PDF, {
+        fallbackNavigate: true,
+        onStatusChange: (s) => {
+          setDownloadStatus(s);
+          if (s === "done" || s === "error") setDownloading(false);
+        },
+      })
+    );
   }, []);
 
   return (

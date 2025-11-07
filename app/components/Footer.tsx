@@ -1,6 +1,6 @@
 "use client";
 import { useTranslation } from "../i18n/useTranslation";
-import { FONTS, SPACING, SOCIAL_LINKS, CONTACT_EMAIL } from "../constants";
+import { FONTS, SPACING, SOCIAL_LINKS } from "../constants";
 import Card3D from "./Card3D";
 
 const SOCIAL_ICONS: Record<string, React.ReactNode> = {
@@ -53,7 +53,7 @@ export default function Footer() {
           {/* Email Contact */}
           <Card3D>
             <a
-              href={`mailto:${CONTACT_EMAIL}`}
+              href={`mailto:${t("footer.email")}`}
               className="border border-(--border-light) sm:border-[1.556px] rounded-[15px] px-5 py-3 sm:px-6 sm:py-4 md:px-[27px] md:py-[19px] flex items-center gap-3 sm:gap-4 bg-(--background)/50 backdrop-blur-sm hover:border-(--accent-primary) hover:shadow-[0_0_20px_rgba(79,195,247,0.3)] transition-all duration-200"
             >
               <svg
