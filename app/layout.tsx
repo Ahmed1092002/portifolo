@@ -5,6 +5,7 @@ import { LanguageProvider } from "./i18n/LanguageContext";
 import { ThemeProvider } from "./context/ThemeContext";
 import ScrollProgress from "./components/ScrollProgress";
 import CustomCursor from "./components/CustomCursor";
+import LocalizationLoader from "./components/LocalizationLoader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -63,9 +64,11 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <LanguageProvider>
-            <ScrollProgress />
-            <CustomCursor />
-            {children}
+            <LocalizationLoader>
+              <ScrollProgress />
+              <CustomCursor />
+              {children}
+            </LocalizationLoader>
           </LanguageProvider>
         </ThemeProvider>
       </body>
