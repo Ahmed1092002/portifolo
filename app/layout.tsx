@@ -36,7 +36,7 @@ export const metadata: Metadata = {
       "a Software Engineer experienced in Flutter and React ecosystems, with a solid background in building mobile and web applications.",
     images: [
       {
-        url: "/Photoroom-20240702_185228_transparent.png",
+        url: "/Gemini_Generated_Image_pc7nb0pc7nb0pc7n.ico",
         width: 1200,
         height: 630,
         alt: "Ahmed Tamer - Software Engineer Portfolio",
