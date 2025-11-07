@@ -6,9 +6,9 @@
   "framework": "nextjs",
   "regions": ["iad1"],
   "env": {
-    "NEXT_PUBLIC_EMAILJS_SERVICE_ID": "service_qco4okh",
-    "NEXT_PUBLIC_EMAILJS_TEMPLATE_ID": "template_55bmak5",
-    "NEXT_PUBLIC_EMAILJS_PUBLIC_KEY": "l4jkIrJ8dO0l7IIHQ",
+    "NEXT_PUBLIC_EMAILJS_SERVICE_ID": "service_1hyux0j",
+    "NEXT_PUBLIC_EMAILJS_TEMPLATE_ID": "template_l7b99d8",
+    "NEXT_PUBLIC_EMAILJS_PUBLIC_KEY": "Kf2fxDzWIrwPgJzea",
     "NEXT_PUBLIC_RESUME_LINK_PDF": "https://docs.google.com/document/d/1VfRZjbZdR1-BnIt4uKoZ8PoVa2bjSaHI/export?format=pdf",
     "NEXT_PUBLIC_RESUME_LINK_DOCX": "https://docs.google.com/document/d/1VfRZjbZdR1-BnIt4uKoZ8PoVa2bjSaHI/export?format=docx"
   }
