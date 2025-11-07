@@ -31,6 +31,7 @@ export const SOCIAL_LINKS = [
   { name: "LinkedIn", url: "https://www.linkedin.com/in/ahmedtamer109" },
   { name: "GitHub", url: "https://github.com/Ahmed1092002" },
   { name: "Facebook", url: "https://www.facebook.com/ahmed.tamer.elsayad" },
+  { name: "WhatsApp", url: "https://wa.me/+201000807490" },
   // { name: "Instagram", url: "https://instagram.com" },
 ] as const;
 
