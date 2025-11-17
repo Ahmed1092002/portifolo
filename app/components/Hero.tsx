@@ -317,7 +317,11 @@ function Hero() {
                 {downloading ? (
                   <motion.svg
                     animate={{ rotate: 360 }}
-                    transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                    transition={{
+                      duration: 1,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
                     className="w-4 h-4"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -352,7 +356,9 @@ function Hero() {
                     />
                   </svg>
                 )}
-                {downloading ? t("about.downloading") || "Preparing..." : "Download CV"}
+                {downloading
+                  ? t("about.downloading") || "Preparing..."
+                  : "Download CV"}
               </span>
             </motion.button>
           </Card3D>
@@ -381,7 +387,7 @@ function Hero() {
             </a>
             {/* LinkedIn */}
             <a
-              href="https://linkedin.com/in/ahmed-tamer-elsayed"
+              href="https://www.linkedin.com/in/ahmedtamer109"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-(--background)/50 border border-(--border-color) hover:border-(--accent-primary) hover:bg-(--accent-primary)/10 transition-all"
