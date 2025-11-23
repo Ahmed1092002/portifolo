@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap location (update if your production URL differs)
+Sitemap: https://ahmed-tamer.vercel.app/sitemap.xml
+
+# Uncomment to disallow crawling of private paths
+# Disallow: /private
