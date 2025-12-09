@@ -196,13 +196,15 @@
         "title": "Aura Shop",
         "link": "https://github.com/Ahmed1092002/ecommerce_nextjs",
         "company": "Freelance",
+        "demo": "https://ecommerce-nextjs-phi-lyart.vercel.app/",
 
-          "description": "A modern, full-stack e-commerce application built with Next.js 13+, React, TypeScript, and Tailwind CSS. This application features separate experiences for customers and sellers with role-based access control, product management, shopping cart, checkout, and order tracking."
+        "description": "A modern, full-stack e-commerce application built with Next.js 13+, React, TypeScript, and Tailwind CSS. This application features separate experiences for customers and sellers with role-based access control, product management, shopping cart, checkout, and order tracking."
       },
       {
         "title": "Aura Shop(Backend Spring Boot)",
         "link": "https://github.com/Ahmed1092002/ecommerce_spring",
         "company": "Freelance",
+        "demo": "https://ecommerce-nextjs-phi-lyart.vercel.app/",
 
         "description": "A full-featured e-commerce REST API built with Spring Boot 3.5.8, providing comprehensive functionality for customers and sellers to manage products, orders, carts, and more."
       }
