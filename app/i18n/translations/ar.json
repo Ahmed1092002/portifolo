@@ -188,6 +188,20 @@
         "company": "عمل حر",
 
         "description": "منصة اجتماعية لدعم اللاجئين في البحث عن وظائف والتعليم والتواصل. تم بناؤها باستخدام Flutter و .NET وPython وFirebase."
+      },
+      {
+        "title": "Aura Shop",
+        "link": "https://github.com/Ahmed1092002/ecommerce_nextjs",
+        "company": "عمل حر",
+
+        "description": "تطبيق تجارة إلكترونية حديث ومتكامل تم إنشاؤه باستخدام Next.js 13+ وReact وTypeScript وTailwind CSS. يتميز هذا التطبيق بتجارب منفصلة للعملاء والبائعين من خلال التحكم في الوصول القائم على الأدوار وإدارة المنتجات وعربة التسوق والدفع وتتبع الطلبات."
+      },
+      {
+        "title": "Aura Shop(Backend Spring Boot)",
+        "link": "https://github.com/Ahmed1092002/ecommerce_spring",
+        "company": "عمل حر",
+
+        "description": "تطبيق تجارة إلكترونية حديث ومتكامل تم إنشاؤه باستخدام Next.js 13+ وReact وTypeScript وTailwind CSS. يتميز هذا التطبيق بتجارب منفصلة للعملاء والبائعين من خلال التحكم في الوصول القائم على الأدوار وإدارة المنتجات وعربة التسوق والدفع وتتبع الطلبات."
       }
     ]
   },

@@ -113,25 +113,25 @@
       },
       {
         "title": "AI Invoice Assistant (Next.js + LiveKit)",
-                "company": "Applogica",
+        "company": "Applogica",
 
         "description": "Developed an AI-powered assistant that processes invoices and interacts with users in real time using WebRTC and LiveKit."
       },
       {
         "title": "POS App (Vite)",
-                "company": "Applogica",
+        "company": "Applogica",
 
         "description": "Developed a web-based POS system for seamless product and transaction management, integrating with the backend APIs for real-time operations."
       },
       {
         "title": "Flous App (Flutter)",
-                "company": "Applogica",
+        "company": "Applogica",
 
         "description": "A money transfer app built on Paymob API for transactions, verification, and user onboarding. Used Cubit for state management and Firebase for analytics."
       },
       {
         "title": "Ticketing App (React)",
-                "company": "Applogica",
+        "company": "Applogica",
 
         "description": "Built a customer support ticketing dashboard with ticket creation, status tracking, and threaded comments using React and REST APIs."
       },
@@ -140,12 +140,11 @@
         "link": "https://github.com/Ahmed1092002/react-hotel-reservation-system",
         "demo": "https://react-hotel-reservation-system-eight.vercel.app/",
         "description": "A modern hotel reservation system built with React, Redux, and Material-UI.",
-          "company": "Freelance"
-
+        "company": "Freelance"
       },
       {
         "title": "Chat Application (React)",
-                  "company": "Freelance",
+        "company": "Freelance",
 
         "link": "https://github.com/Ahmed1092002/chat",
         "demo": "https://chat-green-omega.vercel.app/login",
@@ -153,45 +152,59 @@
       },
       {
         "title": "Applogica Company Website (Next.js)",
-                        "company": "Applogica",
+        "company": "Applogica",
 
         "description": "Developed the company’s official website using Next.js, focusing on SEO, responsive design, and content modularity."
       },
       {
         "title": "Ahjazili Booking Platform (Flutter)",
-                          "company": "Freelance",
+        "company": "Freelance",
 
         "description": "Developed a booking platform connecting merchants and customers for hotels and wedding halls in Libya using Flutter, Firebase, and Dio."
       },
       {
         "title": "Worker’s App (Flutter)",
         "link": "https://github.com/Ahmed1092002/Workers_App",
-                          "company": "Freelance",
+        "company": "Freelance",
 
         "description": "A job platform connecting businesses and workers with chat, file sharing, and notifications. Built with Flutter, Firebase, and Hive."
       },
       {
         "title": "El Quran App(Flutter)",
         "link": "https://github.com/Ahmed1092002/quran_app",
-                          "company": "Freelance",
+        "company": "Freelance",
 
         "description": "Developed an app for prayer timings, recitations, and accessing scholar recitations, incorporating user authentication and account setup"
       },
       {
         "title": "Ketapy E-commerce(Flutter)",
-                          "company": "Freelance",
+        "company": "Freelance",
 
         "link": "https://github.com/Ahmed1092002/ketaby/tree/master",
-                          "company": "Freelance",
+        "company": "Freelance",
 
         "description": "Built an e-commerce application for buying programming-related books, managing state and API data retrieval"
       },
       {
         "title": "Arshdny Platform (Graduation Project)",
-                          "company": "Graduation Project",
+        "company": "Graduation Project",
 
         "link": "https://github.com/Ahmed1092002/Graduation_Project_Arshdny/tree/main",
         "description": "A social platform supporting refugees with job search, education, and communication. Built with Flutter, .NET, Python, and Firebase."
+      },
+      {
+        "title": "Aura Shop",
+        "link": "https://github.com/Ahmed1092002/ecommerce_nextjs",
+        "company": "Freelance",
+
+          "description": "A modern, full-stack e-commerce application built with Next.js 13+, React, TypeScript, and Tailwind CSS. This application features separate experiences for customers and sellers with role-based access control, product management, shopping cart, checkout, and order tracking."
+      },
+      {
+        "title": "Aura Shop(Backend Spring Boot)",
+        "link": "https://github.com/Ahmed1092002/ecommerce_spring",
+        "company": "Freelance",
+
+        "description": "A full-featured e-commerce REST API built with Spring Boot 3.5.8, providing comprehensive functionality for customers and sellers to manage products, orders, carts, and more."
       }
     ]
   },
