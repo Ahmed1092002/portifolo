@@ -200,8 +200,8 @@
         "title": "Aura Shop(Backend Spring Boot)",
         "link": "https://github.com/Ahmed1092002/ecommerce_spring",
         "company": "عمل حر",
-        "demo": "https://ecommerce-nextjs-phi-lyart.vercel.app/",
-        "description": "تطبيق تجارة إلكترونية حديث ومتكامل تم إنشاؤه باستخدام Next.js 13+ وReact وTypeScript وTailwind CSS. يتميز هذا التطبيق بتجارب منفصلة للعملاء والبائعين من خلال التحكم في الوصول القائم على الأدوار وإدارة المنتجات وعربة التسوق والدفع وتتبع الطلبات."
+        "demo": "https://ecommerce-spring-luoa.onrender.com/swagger-ui/index.html",
+        "description": "واجهة برمجة تطبيقات REST للتجارة الإلكترونية كاملة الميزات تم إنشاؤها باستخدام Spring Boot 3.5.8، مما يوفر وظائف شاملة للعملاء والبائعين لإدارة المنتجات والطلبات وعربات التسوق والمزيد."
       }
     ]
   },

@@ -204,7 +204,7 @@
         "title": "Aura Shop(Backend Spring Boot)",
         "link": "https://github.com/Ahmed1092002/ecommerce_spring",
         "company": "Freelance",
-        "demo": "https://ecommerce-nextjs-phi-lyart.vercel.app/",
+        "demo": "https://ecommerce-spring-luoa.onrender.com/swagger-ui/index.html",
 
         "description": "A full-featured e-commerce REST API built with Spring Boot 3.5.8, providing comprehensive functionality for customers and sellers to manage products, orders, carts, and more."
       }
