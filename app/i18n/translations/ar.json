@@ -202,6 +202,22 @@
         "company": "عمل حر",
         "demo": "https://ecommerce-spring-luoa.onrender.com/swagger-ui/index.html",
         "description": "واجهة برمجة تطبيقات REST للتجارة الإلكترونية كاملة الميزات تم إنشاؤها باستخدام Spring Boot 3.5.8، مما يوفر وظائف شاملة للعملاء والبائعين لإدارة المنتجات والطلبات وعربات التسوق والمزيد."
+      },
+      {
+        "title": "Travel Hub (Next.js)",
+        "link": "https://github.com/Ahmed1092002/booking_front",
+        "company": "Freelance",
+        "demo": "https://booking-front-id1z.onrender.com/",
+
+        "description": "تطبيق حجز الفندق الحديث والكامل تم إنشاؤه باستخدام Next.js 16 و React 19 و TypeScript و Tailwind CSS. هذا التطبيق يقدم حلًا شاملًا لإدارة الفندق والحجز والتعليقات والبرامج المكافأة مع التحكم في الوصول القائم على الأدوار."
+      },
+      {
+        "title": "Travel Hub (Backend Spring Boot)",
+        "link": "https://github.com/Ahmed1092002/booking",
+        "company": "Freelance",
+        "demo": "https://booking-kpm1.onrender.com/swagger-ui/index.html",
+
+        "description": "واجهة برمجة تطبيقات REST للحجز الفندقية كاملة الميزات تم إنشاؤها باستخدام Spring Boot 3.5.8، مما يوفر وظائف شاملة للإدارة الفنادق والحجوزات والتعليقات والبرامج المكافأة مع التحكم في الوصول القائم على الأدوار."
       }
     ]
   },

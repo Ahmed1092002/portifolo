@@ -207,6 +207,22 @@
         "demo": "https://ecommerce-spring-luoa.onrender.com/swagger-ui/index.html",
 
         "description": "A full-featured e-commerce REST API built with Spring Boot 3.5.8, providing comprehensive functionality for customers and sellers to manage products, orders, carts, and more."
+      },
+      {
+        "title": "Travel Hub (Next.js)",
+        "link": "https://github.com/Ahmed1092002/booking_front",
+        "company": "Freelance",
+        "demo": "https://booking-front-id1z.onrender.com/",
+
+        "description": "A modern, full-featured hotel booking platform built with Next.js 16, React 19, and TypeScript. This application provides a comprehensive solution for hotel management, bookings, reviews, and loyalty programs with role-based access control."
+      },
+      {
+        "title": "Travel Hub (Backend Spring Boot)",
+        "link": "https://github.com/Ahmed1092002/booking",
+        "company": "Freelance",
+        "demo": "https://booking-kpm1.onrender.com/swagger-ui/index.html",
+
+        "description": "A full-featured hotel booking REST API built with Spring Boot 3.5.8, providing comprehensive functionality for hotel management, bookings, reviews, and loyalty programs with role-based access control."
       }
     ]
   },
