@@ -101,6 +101,14 @@
     ],
     "items": [
       {
+        "title": "Ovarc Platform",
+        "link": "https://ovarc.io/en",
+        "company": "Profolio",
+        "demo": "https://ovarc.io/en",
+        "description": "A business operations platform that helps companies manage global expansion, incorporation, payroll, HR operations, compliance, and salary calculations through a modern and user-friendly web experience."
+      },
+     
+      {
         "title": "ERP System (React)",
         "description": "Built and maintained a modular ERP system using React and TypeScript. Implemented a design system using Atomic Design and Storybook, published as an NPM package for UI consistency.",
         "company": "Applogica"
@@ -231,11 +239,17 @@
     "subtitle": "Professional Experience",
     "items": [
       {
+        "role": "Frontend Developer",
+        "company": "Ovarc",
+        "img": "logo-color.svg",
+        "period": "Fab 2026 - June 2026 | Cairo, Egypt",
+        "description": "building responsive user interfaces, implementing interactive features, and improving the overall user experience across the platform."
+      },
+      {
         "role": "Flutter & Web Developer",
         "company": "Applogica",
         "img": "Applogicalogo.3830cb287b03d61b634d (2).png",
-
-        "period": "2024 - Present | Cairo, Egypt",
+        "period": "Oct 2024 - Fab 2026 | Cairo, Egypt",
         "description": "Worked on multiple projects including ERP, E-Invoice SaaS, POS, Ticketing, and Flous App. Built reusable design systems and contributed to AI-integrated web applications using LiveKit. Managed code quality via SonarQube and deployed solutions on Azure."
       },
       {
